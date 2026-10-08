@@ -1,0 +1,31 @@
+[project]
+name = "shelf-sweep"
+version = "0.0.1"
+requires-python = ">=3.12"
+dependencies = [
+  "google-genai>=2.24.0",
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.30",
+  "pydantic>=2.7",
+  "opencv-python-headless>=4.9",
+  "numpy>=1.26",
+  "httpx>=0.27",
+  "rapidfuzz>=3.0",
+  "pycolmap>=4.2,<5",   # BSD-3 sparse SfM for the debugger 3D view (pipeline/recon3d.py)
+  "openpyxl>=3.1",      # MIT; the ground truth and results workbook (scripts/ground_truth_sheet.py, the /truth page)
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+local-detection = ["torch>=2.6", "torchvision>=0.21", "ultralytics>=8.4", "ftfy>=6", "clip @ git+https://github.com/ultralytics/CLIP.git"]
+local-ocr = ["easyocr>=1.7"]
+# open cross-platform reader (ONNX, CPU). rapidocr declares opencv-python (non-headless), which would shadow opencv-python-headless:
+# install with `uv pip install --no-deps rapidocr onnxruntime` plus these (scripts/setup_local_models.sh does this).
+rapidocr = ["onnxruntime>=1.18", "pyclipper", "shapely", "omegaconf", "colorlog", "pyyaml", "six", "tqdm", "pillow", "requests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.setuptools]
+packages = ["pipeline", "providers", "eval", "app"]

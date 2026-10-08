@@ -1,0 +1,9 @@
+{
+  "_comment": "Fill from hand measurements BEFORE tuning.",
+  "true_book_count": null,
+  "legible_titles": [],
+  "measured_spines": [],
+  "checked_prices": [],
+  "non_book_items": [],
+  "room_tape": {"length_m": null, "width_m": null, "height_m": null, "shelved_wall_m2": null}
+}

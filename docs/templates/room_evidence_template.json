@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "purpose": "room_evidence",
+  "_instructions": [
+    "Wall quads are the four image corners of a wall face between two VERTICAL room corners, floor line to ceiling line (TL, TR, BR, BL). Mark only corners you can actually see.",
+    "Put two adjacent walls in the SAME frame (a vertical room corner view) so focal length can be recovered with a level camera.",
+    "height_anchor is the ceiling height the person states (user-supplied) or a floor-to-ceiling plane calibration; it is NOT measured by the camera.",
+    "Delete _instructions before use."
+  ],
+  "walls": [
+    {"wall_id": "A", "frame_id": "f00000", "quad_px": [[0, 0], [0, 0], [0, 0], [0, 0]], "spans_floor_to_ceiling": true,
+     "provenance": {"source": "user_marked", "actor": "<name>", "supplied_at": "<ISO time>"}},
+    {"wall_id": "B", "frame_id": "f00000", "quad_px": [[0, 0], [0, 0], [0, 0], [0, 0]], "spans_floor_to_ceiling": true,
+     "provenance": {"source": "user_marked", "actor": "<name>", "supplied_at": "<ISO time>"}}
+  ],
+  "height_anchor": {"kind": "user_supplied_ceiling_height", "height_m": null,
+                    "provenance": {"actor": "<name>", "supplied_at": "<ISO time>", "utterance": "<what was said>", "tolerance_pct": 3.0,
+                                   "independent_of_evaluation_truth": true}},
+  "layout": {"declared_shape": "rectangular", "wall_order": ["A", "B"]},
+  "openings": []
+}

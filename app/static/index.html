@@ -1,0 +1,289 @@
+<!doctype html>
+<!-- Adapted from insurance_claim_live_agent_team/live_demo/index.html (awesome-llm-apps @ 4bf51ab, Apache-2.0; see app/NOTICE.md).
+     MODIFIED: avatar, notebook, policy and packet-markdown surfaces replaced by the library inventory. Clean Sweep page with a
+     Details toggle (technical panels carry class "tech"), full-screen camera overlay while sweeping, summary card after the sweep. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Library Contents Claim - Sweep, Debugger</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="desk">
+      <header class="desk-bar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <h1>Library Contents Claim</h1>
+            <p id="modelLabel" class="brand-sub tech">Connecting</p>
+          </div>
+        </div>
+        <nav id="siteNav" class="site-nav" aria-label="Site sections">
+          <a href="#sweep" data-view="sweep">Sweep</a>
+          <a href="#debug" data-view="debug">Debugger</a>
+          <details id="navArchive" class="nav-archive">
+            <summary title="Retired views, kept for reference">Archive</summary>
+            <div class="nav-archive-menu">
+              <a href="#measure" data-view="measure">Measurements</a>
+              <a href="#frames" data-view="frames">Frames</a>
+              <a href="#label" data-view="label">Label titles</a>
+            </div>
+          </details>
+        </nav>
+        <div class="bar-actions">
+          <a class="tech" href="/annotations" target="_blank" rel="noopener">Human annotations</a>
+          <a id="downloadPacket" class="ghost-button" href="#" download hidden>Download packet + evidence</a>
+          <button id="detailsToggle" class="ghost-button details-toggle" type="button" aria-pressed="false" title="Show the technical panels (ids, hosted calls, capture-quality numbers, background stages, evaluation forms)">Details</button>
+        </div>
+      </header>
+      <div id="recStrip" class="rec-strip" role="status" aria-live="polite">
+        <span id="recState" class="rec-state">Idle</span>
+        <span id="recIdentity" class="rec-identity tech"></span>
+        <span id="buildPill" class="build-pill tech" title="loaded backend / source fingerprint"></span>
+      </div>
+
+      <div id="recDock" class="rec-dock" aria-label="Active capture preview (visible from every view)">
+        <div id="cameraStage" class="camera-stage" hidden>
+          <video id="cameraPreview" autoplay muted playsinline></video>
+          <span class="camera-tag"><span class="rec-dot" aria-hidden="true"></span> <span id="cameraTag">Agent is watching</span></span>
+          <div id="camOverlay" class="cam-overlay" aria-label="Sweep controls">
+            <div class="ov-top">
+              <span class="ov-chip ov-rec" title="Recording time"><span class="rec-dot" aria-hidden="true"></span> <span id="ovTime">0:00</span></span>
+              <span id="ovQuality" class="ov-chip ov-quality q-unknown" title="Capture quality"><i class="q-dot" aria-hidden="true"></i><span id="ovQualityWord">Measuring</span></span>
+              <button id="ovStop" class="ov-chip ov-stop" type="button" title="Stop the camera without ending the sweep">Stop camera</button>
+            </div>
+            <p id="ovLine" class="ov-line" role="status" aria-live="polite"></p>
+            <div class="ov-actions">
+              <button id="ovTalk" class="ov-btn talk" type="button" aria-label="Talk to the agent"><span class="icon-mic" aria-hidden="true"></span><span class="ov-label">Talk</span></button>
+              <button id="ovEnd" class="ov-btn end" type="button" aria-label="End the sweep">End sweep</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="view-sweep" class="view">
+      <main class="desk-layout">
+        <aside class="side media-column" aria-label="Live call and camera">
+          <section class="card call-card">
+            <div class="card-head"><span class="card-kicker">Live sweep</span><span id="callStatus" class="pill">Connecting</span></div>
+            <div class="controls">
+              <button id="cameraButton" class="round-button primary" type="button" aria-label="Start the camera sweep"><span class="icon-camera" aria-hidden="true"></span><span class="round-label">Show camera</span></button>
+              <button id="micButton" class="round-button" type="button" aria-label="Start live voice"><span class="icon-mic" aria-hidden="true"></span><span class="round-label">Talk</span></button>
+              <button id="endButton" class="round-button" type="button" aria-label="End the sweep"><span class="icon-stop" aria-hidden="true"></span><span class="round-label">End sweep</span></button>
+              <button id="newIntakeButton" class="round-button subtle" type="button" aria-label="Start a new sweep"><span class="icon-new" aria-hidden="true"></span><span class="round-label">New sweep</span></button>
+            </div>
+            <p id="roomTip" class="sweep-tip">Film the shelves row by row, then tilt down to the wall-floor line, up to the ceiling line, and pan slowly through each corner.</p>
+            <span id="hostedSwitch" class="hosted-switch" aria-live="polite"><span id="hostedIndicator" class="hosted-ind on">Gemini: connected</span> <button id="hostedToggle" type="button" class="ghost-button hosted-btn">Disconnect Gemini</button> <span id="hostedCounters" class="small tech"></span></span>
+            <div class="replay-row tech">
+              <select id="replaySelect" aria-label="Registered scan to replay"></select>
+              <button id="replayButton" class="ghost-button" type="button">Replay video</button>
+            </div>
+            <p id="modeLabel" class="mode-label tech"></p>
+          </section>
+          <section class="card team-card tech">
+            <div class="card-head"><span class="card-kicker">Background work</span><span class="card-hint">Detection, reading, merge</span></div>
+            <ul id="teamFeed" class="team-feed" tabindex="0" aria-label="Background activity"></ul>
+          </section>
+        </aside>
+
+        <section class="inventory-wrap" aria-label="Sweep results" tabindex="0">
+          <div id="sweepStatus" class="sweep-status idle" role="status" aria-live="polite"><span class="ss-icon" aria-hidden="true">○</span> <b class="ss-word">Idle</b><span class="ss-detail"></span> <a id="ssReport" class="ss-link" href="#" target="_blank" rel="noopener" hidden>Open report</a> <a id="ssPacket" class="ss-link" href="#" hidden>Download packet</a></div>
+          <section id="summaryCard" class="summary-card" aria-label="Sweep summary" hidden>
+            <div class="sum-grid">
+              <div class="sum-tile sum-books"><span class="sum-label">Books</span><b id="sumBooks" class="sum-big">unknown</b><span id="sumBooksRange" class="sum-sub"></span></div>
+              <div class="sum-tile"><span class="sum-label">Titles identified</span><b id="sumTitles" class="sum-big">unknown</b><span id="sumTitlesSub" class="sum-sub"></span></div>
+              <div class="sum-tile"><span class="sum-label">Replacement / used (USD)</span><b id="sumMoney" class="sum-big">unknown</b><span id="sumMoneySub" class="sum-sub"></span></div>
+            </div>
+            <div class="sum-maps">
+              <span class="sum-label">Maps</span>
+              <ul id="sumMaps" class="sum-chips" aria-label="2D panorama, 3D map and measurement status"></ul>
+              <div id="sweepBuilds" class="sweep-status idle" role="status" aria-live="polite" hidden><span class="ss-icon" aria-hidden="true">○</span> <b class="ss-word">Maps</b><span class="ss-detail tech"></span> <span id="sbBar" class="ss-bar" role="progressbar" aria-label="2D panorama and 3D map build progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><i id="sbFill" class="ss-fill"></i></span> <a id="sbPano" class="ss-link" href="#debug" data-open-map="2d" hidden>Open 2D panorama</a> <a id="sbRecon" class="ss-link" href="#debug" data-open-map="3d" hidden>Open 3D map</a></div>
+            </div>
+            <div class="sum-actions">
+              <a id="sumPacket" class="primary-button" href="#" download>Download packet</a>
+              <a id="sumReport" class="ghost-button" href="#" target="_blank" rel="noopener">Open report</a>
+            </div>
+          </section>
+          <div class="banner prov" id="provBanner">PROVISIONAL, INCOMPLETE: unpriced and unmeasured. Prices, spine sizes, shelf run and room measurements are unknown (not zero).</div>
+          <div id="nudges"></div>
+          <div id="captureQuality" class="banner info tech" aria-live="polite"></div>
+          <div id="provenance" class="banner info tech"></div>
+          <details class="result-section">
+            <summary><h2>Counts</h2><span id="countsHint" class="sum-hint">computed in code</span></summary>
+            <div id="totals" class="totals"></div>
+            <div id="progress" class="small tech"></div>
+          </details>
+          <details class="result-section">
+            <summary><h2>Books</h2><span id="booksHint" class="sum-hint"></span></summary>
+            <div id="books"></div>
+          </details>
+          <details class="result-section">
+            <summary><h2>Other contents</h2><span id="itemsHint" class="sum-hint"></span></summary>
+            <div id="items"></div>
+          </details>
+          <details class="result-section">
+            <summary><h2>Measurements</h2><span id="measureHint" class="sum-hint"></span></summary>
+            <div id="sumMeasure" class="small"></div>
+          </details>
+          <details class="result-section">
+            <summary><h2>Excluded by you</h2></summary>
+            <div id="excluded"></div>
+          </details>
+          <div class="tech">
+          <h2>Held-out tape truth (evaluation only: never read by the software)</h2>
+          <div class="calib" id="truthBox">
+            <p class="small">Measure with a tape BEFORE looking at model output, on books that are <b>not</b> the calibration unit. Choose the frame above, set the mode to "HELD-OUT truth", tap ONE book, type its two readings. Saved outside the run as <code>evaluation_truth</code>; the pipeline, engine and packet never read it.</p>
+            <div class="calib-row">
+              <input id="truthName" type="text" placeholder="your name (annotator)">
+              <input id="truthHeight" type="number" step="any" min="0" placeholder="height">
+              <input id="truthThickness" type="number" step="any" min="0" placeholder="thickness">
+              <select id="truthUnit"><option>cm</option><option>mm</option><option>in</option></select>
+              <select id="truthLang"><option value="">language ?</option><option value="es">es</option><option value="en">en</option><option value="mixed">mixed</option></select>
+              <input id="truthDesc" type="text" placeholder="where (unit, shelf, position)">
+              <button id="truthSaveSpine" type="button" class="ghost-button">Save spine reading</button>
+              <span id="truthCount" class="small">0 / 20</span>
+            </div>
+            <ul id="truthList" class="review-list"></ul>
+            <div class="calib-row">
+              <input id="truthRoomL" type="number" step="any" min="0" placeholder="room length">
+              <input id="truthRoomW" type="number" step="any" min="0" placeholder="room width">
+              <input id="truthRoomH" type="number" step="any" min="0" placeholder="ceiling height">
+              <select id="truthRoomUnit"><option>m</option><option>cm</option><option>ft</option></select>
+              <input id="truthRoomNotes" type="text" placeholder="shape notes, openings">
+              <button id="truthSaveRoom" type="button" class="ghost-button">Save room reading</button>
+            </div>
+            <p id="truthMsg" class="small"></p>
+          </div>
+          <h2>Review queue</h2><ul id="review" class="review-list"></ul>
+          <h2>Capture gaps</h2><ul id="gaps" class="review-list"></ul>
+          </div>
+        </section>
+
+        <aside class="side conversation-column" aria-label="Transcript">
+          <section class="card transcript-card">
+            <div class="card-head"><span class="card-kicker">Transcript</span></div>
+            <div id="transcript" class="transcript" aria-live="polite" tabindex="0" role="region" aria-label="Conversation transcript"></div>
+            <form id="textForm" class="text-entry">
+              <input id="textInput" type="text" autocomplete="off" placeholder="Or type to the agent..." aria-label="Type a message" />
+              <button type="submit">Send</button>
+            </form>
+          </section>
+        </aside>
+      </main>
+      </div>
+      <section id="view-measure" class="view" hidden aria-label="Measurements">
+        <div class="inventory-wrap measure-view">
+          <div class="banner prov">Sizes come from the sweep itself (3D map x a scale from identified books' catalogue sizes, else a labelled PRIOR). Nobody is asked to measure anything. Values are software_only_unvalidated; unknown stays unknown (never 0).</div>
+          <h2>Automatic measurement (from the sweep)</h2>
+          <div class="calib-row"><select id="autoRun" aria-label="Saved run"></select><button id="autoRefresh" type="button" class="ghost-button">Refresh</button></div>
+          <div id="autoMeasure" class="small">Loading...</div>
+          <details class="volunteered"><summary class="small">Optional: inputs a person volunteered (never requested)</summary>
+          <div id="measureSummary" class="small"></div>
+          <h2>Measurement: calibration and coverage (user-supplied inputs)</h2>
+          <div id="measureStatus" class="small"></div>
+          <div class="calib">
+            <p class="small">Pick a saved frame, tap the points, enter what the person stated. Corners go TL, TR, BR, BL. No marker, no pulling books out.</p>
+            <div class="calib-row">
+              <select id="calFrame" aria-label="Saved frame"></select>
+              <select id="calMode" aria-label="What to mark">
+                <option value="plane_quad">Shelf unit face: 4 corners (width + height)</option>
+                <option value="segment">Known length: 2 points</option>
+                <option value="wall">Room wall floor-to-ceiling: 4 corners</option>
+                <option value="truth_spine">HELD-OUT truth: tap ONE book (see section below)</option>
+              </select>
+              <button id="calClear" type="button" class="ghost-button">Clear points</button>
+            </div>
+            <div id="calStage" class="cal-stage"><img id="calImg" alt="Tap points on this saved frame"><div id="calDots"></div></div>
+            <div class="calib-row">
+              <input id="calWidth" type="number" step="any" min="0" placeholder="width / length">
+              <input id="calHeight" type="number" step="any" min="0" placeholder="height">
+              <select id="calUnit"><option>m</option><option>cm</option><option>ft</option><option>in</option></select>
+              <input id="calTol" type="number" step="any" min="0" max="25" value="3" title="how uncertain is the stated number, percent">
+              <input id="calPlane" type="text" placeholder="plane id (optional)">
+              <input id="calWall" type="text" maxlength="4" placeholder="wall id (A, B...)">
+            </div>
+            <div class="calib-row">
+              <input id="calUtterance" type="text" placeholder="who said what: e.g. 'the unit is about 1.8 m wide and 2 m tall'">
+              <label class="small"><input id="calFronto" type="checkbox"> camera faced it squarely (segment only)</label>
+              <label class="small"><input id="calCeiling" type="checkbox"> wall spans floor to ceiling</label>
+            </div>
+            <div class="calib-row">
+              <button id="calSubmit" type="button" class="ghost-button">Save marks</button>
+              <input id="ceilValue" type="number" step="any" min="0" placeholder="ceiling height">
+              <button id="ceilSubmit" type="button" class="ghost-button">Save ceiling height</button>
+            </div>
+            <p id="calMsg" class="small"></p>
+          </div>
+          </details>
+        </div>
+      </section>
+      <section id="view-label" class="view" hidden aria-label="Label titles">
+        <div class="calib-row"><button id="pairTitles" type="button" class="ghost-button">Titles</button><button id="pairView" type="button" class="ghost-button">Pairs</button></div>
+        <div id="pairRoot" hidden>
+          <p class="banner prov">Compare two sightings of a physical book. Model labels are model-read; only human spot checks support evaluation. Prior answers are hidden while browsing.</p>
+          <div class="calib-row"><select id="pairRun" aria-label="Pair sheet run"></select><button id="pairLoad" type="button" class="ghost-button">Load sheets</button><a href="/api/pairs/prompt" target="_blank" rel="noopener">Adjudicator prompt</a></div>
+          <div class="calib-row"><button id="pairPrev" type="button" class="ghost-button">Previous</button><button id="pairNext" type="button" class="ghost-button">Next</button><span id="pairPosition"></span><a id="pairDownload" download>Download pair</a><a id="pairContact" target="_blank" rel="noopener">Contact page</a><a id="pairSummary" target="_blank" rel="noopener">Summary (reveals evaluation)</a></div>
+          <img id="pairImage" alt="Two spine sightings and outlined frame contexts" style="max-width:100%;height:auto">
+          <details><summary>Import adjudicator answers</summary>
+            <div class="calib-row"><input id="pairAnnotator" placeholder="annotator, e.g. chatgpt-MODEL-VERSION" aria-label="Pair annotator"><select id="pairKind" aria-label="Pair label provenance"><option value="model">Model-read</option><option value="human">Human spot check</option></select></div>
+            <textarea id="pairAnswers" rows="5" style="width:100%" aria-label="Pair JSON lines" placeholder='{"pair_id":"pair-00001","answer":"same","reason":"Visible evidence."}'></textarea>
+            <button id="pairImport" type="button" class="ghost-button">Import JSON lines</button>
+          </details>
+          <p id="pairMsg" role="status"></p>
+        </div>
+        <div class="inventory-wrap measure-view" id="labelRoot">
+          <div class="banner prov">HELD-OUT human truth. Type each title <b>exactly as printed</b> (accents kept), choose the language, or mark it unreadable. The crop is shown as the readers see it (upscaled + padded in memory; the saved crop and its hash are native). The model's reading is hidden on purpose. Saved to <code>eval/truth_capture/</code>; the pipeline never reads it.</div>
+          <div class="calib-row" id="labelSetup">
+            <select id="labelRun" aria-label="Finished run"></select>
+            <input id="labelN" type="number" min="1" max="400" value="100" title="number of crops">
+            <input id="labelName" type="text" placeholder="your name (annotator)">
+            <button id="labelStart" type="button" class="ghost-button">Start / resume</button>
+            <span id="labelMsg" class="small"></span>
+          </div>
+          <div id="labelWork" hidden>
+            <div class="calib-row"><b id="labelProgress"></b><span id="labelCounts" class="small"></span><span id="labelMeta" class="small"></span></div>
+            <div class="label-stage"><img id="labelImg" alt="spine crop (best view)"><img id="labelCtx" alt="context: widened 30% along the spine" title="context strip: best view widened 30% along the spine"><img id="labelS0" alt="other sighting 1" title="2nd-best sighting of the same book" hidden><img id="labelS1" alt="other sighting 2" title="3rd-best sighting of the same book" hidden></div>
+            <p class="small" id="labelPrefillNote"></p>
+            <div class="calib-row">
+              <button id="labelRotL" type="button" class="ghost-button" title="rotate left ( [ )">&#8634; rotate</button>
+              <button id="labelRotR" type="button" class="ghost-button" title="rotate right ( ] )">rotate &#8635;</button>
+              <button id="labelPrev" type="button" class="ghost-button" title="Alt+Left">&larr; prev</button>
+              <button id="labelNext" type="button" class="ghost-button" title="Alt+Right">next &rarr;</button>
+              <button id="labelUndo" type="button" class="ghost-button" title="Alt+Z">undo</button>
+              <button id="labelNative" type="button" class="ghost-button" title="toggle between the upscaled+padded reader view and the exact saved crop">show native crop</button>
+              <span id="labelCurrent" class="small"></span>
+            </div>
+            <div class="calib-row">
+              <input id="labelTitle" type="text" placeholder="title exactly as printed (pre-filled from the model reading when available; Enter = accept/save + next)" autocomplete="off" spellcheck="false" style="flex:3 1 280px">
+              <input id="labelAuthor" type="text" placeholder="author (optional)" autocomplete="off" spellcheck="false">
+              <select id="labelLang"><option value="es">es</option><option value="en">en</option><option value="other">other</option></select>
+            </div>
+            <div class="calib-row">
+              <button id="labelSave" type="button" class="ghost-button">Accept / save + next (Enter)</button>
+              <button id="labelPartial" type="button" class="ghost-button" title="P: the visible text is a cut-off fragment, not the full title">Partial / cut-off (P)</button>
+              <button id="labelUnreadable" type="button" class="ghost-button" title="U">Unreadable (U)</button>
+              <button id="labelNotBook" type="button" class="ghost-button" title="N">Not a book (N)</button>
+              <button id="labelDup" type="button" class="ghost-button" title="D">Duplicate of previous (D)</button>
+            </div>
+            <p class="small" id="labelLegend">Keys (when not typing in a field): <b>Enter</b> accept/save + next · <b>P</b> partial/cut-off (keeps the fragment) · <b>U</b> unreadable · <b>N</b> not a book · <b>D</b> duplicate of previous · <b>Z</b> or <b>&#8984;Z</b> undo · <b>[</b> <b>]</b> rotate · <b>&larr;</b> <b>&rarr;</b> move · <b>1/2/3</b> language es/en/other · <b>T</b> edit title · <b>Esc</b> leave the field. In a field: Enter saves, Esc leaves.</p>
+          </div>
+        </div>
+      </section>
+      <section id="view-frames" class="view" hidden aria-label="Frames">
+        <p class="small view-note">Original saved frames. Pick the <b>Active sweep</b> entry for this session, or a saved run (separate evidence; saved runs do not share this session's calibration or OCR).</p>
+        <iframe id="framesFrame" class="embed" title="Frames and keyframes" data-src="/frames?embed=1"></iframe>
+      </section>
+      <section id="view-debug" class="view" hidden aria-label="Debugger">
+        <div class="banner info" id="debugBanner">Read-only viewer of SAVED processing runs (mounted from the debugger at /debug/). It is not the active session: calibration, corrections and OCR in a saved run do not apply to this sweep. A finished sweep appears here after you refresh the catalogue.</div>
+        <div class="calib-row"><button id="debugRefresh" type="button" class="ghost-button">Refresh debugger catalogue</button><a href="/debug/" target="_blank" rel="noopener" class="small">Open debugger standalone (separate page; does not hold the sweep)</a><span id="debugNote" class="small"></span></div>
+        <iframe id="debugFrame" class="embed" title="Stitched evidence debugger" data-src="/debug/"></iframe>
+      </section>
+    </div>
+    <canvas id="frameCanvas" hidden></canvas>
+    <canvas id="evidenceCanvas" hidden></canvas>
+    <script src="./app.js"></script>
+    <script src="./labels.js"></script>
+    <script src="./pairs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<!-- Ground-truth labelling page: hand-read titles, non-book items and the 15 price checks for one sweep.
+     Served only on the loopback server (http://127.0.0.1:4182/truth). Answers save to ground_truth/ground_truth_labels.json, never runs/. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Ground truth</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/truth.css" />
+  </head>
+  <body>
+    <div class="gt">
+      <header class="gt-bar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <h1>Ground truth</h1>
+            <p class="brand-sub" id="sweepLine">Loading…</p>
+          </div>
+        </div>
+        <nav class="gt-tabs" role="tablist" aria-label="Sections">
+          <button role="tab" data-tab="titles" aria-selected="true">Titles</button>
+          <button role="tab" data-tab="items" aria-selected="false">Items</button>
+          <button role="tab" data-tab="prices" aria-selected="false">Prices</button>
+          <button role="tab" data-tab="results" aria-selected="false">Write to sheet</button>
+        </nav>
+        <span id="saveState" class="gt-save small" aria-live="polite">—</span>
+      </header>
+
+      <main class="gt-main">
+        <p id="err" class="gt-err" role="alert" hidden></p>
+
+        <!-- ---------------------------------------------------------------- Titles -->
+        <section id="tab-titles" class="gt-tab" role="tabpanel">
+          <div class="gt-progress card">
+            <div class="gt-prog-row">
+              <span id="tProg" class="small">—</span>
+              <label class="small"><input type="checkbox" id="tUnanswered" /> unanswered only</label>
+              <label class="small"><input type="checkbox" id="tIdentified" /> identified only</label>
+              <span id="tPos" class="small gt-pos">—</span>
+            </div>
+            <div class="gt-bar-outer"><div id="tBar" class="gt-bar-fill"></div></div>
+          </div>
+          <article class="card gt-card" id="tCard">
+            <div class="gt-media">
+              <figure class="gt-crop"><canvas width="0" height="0" id="tCrop" aria-label="Spine crop"></canvas><figcaption id="tCropCap" class="small"></figcaption></figure>
+              <figure class="gt-frame"><canvas width="0" height="0" id="tFrame" aria-label="Frame with the line's box"></canvas><figcaption id="tFrameCap" class="small"></figcaption></figure>
+            </div>
+            <div class="gt-side">
+              <dl class="gt-sys" id="tSys"></dl>
+              <label for="tTitle" class="lbl">Title you can read on the spine</label>
+              <input id="tTitle" type="text" autocomplete="off" spellcheck="false" placeholder="Enter to type · Enter again to save" />
+              <div class="gt-verdict" id="tVerdict" aria-live="polite"></div>
+              <div class="gt-btns">
+                <button data-k="y" class="ok">Y · system title correct</button>
+                <button data-k="n" class="bad">N · wrong</button>
+                <button data-k="l">L · not legible</button>
+              </div>
+              <div class="gt-btns">
+                <button data-k="prev">← prev</button><button data-k="next">next →</button><button data-k="jump">J · jump</button>
+                <button data-k="rot" title="Rotate the crop">R · rotate</button><button data-k="clear" title="Remove this line's answer">clear</button>
+              </div>
+              <p class="small gt-keys">Keys: <kbd>Y</kbd> correct · <kbd>N</kbd> wrong (then type the title) · <kbd>L</kbd> not legible · <kbd>Enter</kbd> type / save ·
+                <kbd>Esc</kbd> leave the box · <kbd>←</kbd>/<kbd>→</kbd> · <kbd>J</kbd> jump · <kbd>R</kbd> rotate</p>
+            </div>
+          </article>
+          <details class="card gt-missed" id="tMissedBox">
+            <summary>Legible spines the system missed (<span id="tMissedN">0</span>)</summary>
+            <form id="tMissedForm" class="gt-addrow">
+              <input name="title" placeholder="Title" required maxlength="300" />
+              <input name="frame" placeholder="Frame (f00123)" maxlength="20" pattern="f?\d{1,5}(\.jpg)?" />
+              <input name="notes" placeholder="Notes (where on the shelf)" maxlength="300" />
+              <button type="submit">Add</button>
+            </form>
+            <ul id="tMissed" class="gt-list"></ul>
+          </details>
+        </section>
+
+        <!-- ---------------------------------------------------------------- Items -->
+        <section id="tab-items" class="gt-tab" role="tabpanel" hidden>
+          <div class="gt-progress card">
+            <div class="gt-prog-row">
+              <span id="iProg" class="small">—</span>
+              <label class="small"><input type="checkbox" id="iUnanswered" /> unanswered only</label>
+              <label class="small">True number of non-book items in the room <input id="iTrue" type="number" min="0" step="1" class="gt-num" /></label>
+              <span id="iPos" class="small gt-pos">—</span>
+            </div>
+            <div class="gt-bar-outer"><div id="iBar" class="gt-bar-fill"></div></div>
+          </div>
+          <article class="card gt-card" id="iCard">
+            <div class="gt-media">
+              <figure class="gt-crop"><canvas width="0" height="0" id="iCrop" aria-label="Item crop"></canvas><figcaption class="small">crop from the frame</figcaption></figure>
+              <figure class="gt-frame"><canvas width="0" height="0" id="iFrame" aria-label="Frame with the item's box"></canvas><figcaption id="iFrameCap" class="small"></figcaption></figure>
+            </div>
+            <div class="gt-side">
+              <dl class="gt-sys" id="iSys"></dl>
+              <div class="gt-verdict" id="iVerdict" aria-live="polite"></div>
+              <div class="gt-btns">
+                <button data-k="y" class="ok">Y · real non-book item</button>
+                <button data-k="n" class="bad">N · not a real item</button>
+              </div>
+              <label for="iCat" class="lbl">True category</label>
+              <input id="iCat" list="iCats" autocomplete="off" placeholder="pick or type" maxlength="80" />
+              <datalist id="iCats"></datalist>
+              <div class="gt-btns">
+                <button data-k="c" class="ok">C · category correct</button>
+                <button data-k="x" class="bad">X · category wrong</button>
+              </div>
+              <div class="gt-btns">
+                <button data-k="prev">← prev</button><button data-k="next">next →</button><button data-k="jump">J · jump</button>
+                <button data-k="clear">clear</button>
+              </div>
+              <p class="small gt-keys">Keys: <kbd>Y</kbd>/<kbd>N</kbd> real item · <kbd>C</kbd> category correct · <kbd>X</kbd> category wrong (then type it, <kbd>Enter</kbd>) ·
+                <kbd>←</kbd>/<kbd>→</kbd> · <kbd>J</kbd> jump</p>
+            </div>
+          </article>
+          <details class="card gt-missed">
+            <summary>Items the system missed (<span id="iMissedN">0</span>)</summary>
+            <form id="iMissedForm" class="gt-addrow">
+              <input name="category" placeholder="Category" list="iCats" required maxlength="80" />
+              <input name="frame" placeholder="Frame (f00123)" maxlength="20" pattern="f?\d{1,5}(\.jpg)?" />
+              <input name="notes" placeholder="Notes" maxlength="300" />
+              <button type="submit">Add</button>
+            </form>
+            <ul id="iMissed" class="gt-list"></ul>
+          </details>
+        </section>
+
+        <!-- ---------------------------------------------------------------- Prices -->
+        <section id="tab-prices" class="gt-tab" role="tabpanel" hidden>
+          <div class="card">
+            <p class="small" id="pIntro"></p>
+            <div class="gt-table-wrap">
+              <table class="gt-table" id="pTable">
+                <thead><tr><th>#</th><th>Book</th><th>System price</th><th>Source</th><th>Retrieved</th>
+                  <th>Hand-checked price (USD)</th><th>Hand URL</th><th>Date</th><th>Error</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------------------------------------------------------------- Results -->
+        <section id="tab-results" class="gt-tab" role="tabpanel" hidden>
+          <div class="card">
+            <p class="small">Rebuilds <code id="sheetName">ground_truth_and_results.xlsx</code> in ground_truth/ with these answers in the yellow cells.
+              Values typed straight into the workbook (spines, room tape) are kept where this page has no answer.</p>
+            <p id="excelWarn" class="gt-warn small" hidden></p>
+            <div class="gt-btns"><button id="writeBtn" class="primary">Write to sheet</button><button id="writeForce" hidden>Write anyway</button></div>
+            <p id="writeMsg" class="small" aria-live="polite"></p>
+            <div class="gt-table-wrap">
+              <table class="gt-table" id="rTable" hidden>
+                <caption class="small">Preview of the Results tab, computed in Python the same way as its formulas (open the workbook for the formula values).</caption>
+                <thead><tr><th>Measure</th><th>Pass bar</th><th>Ground truth</th><th>System</th><th>Score</th><th>Result</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/truth.js"></script>
+  </body>
+</html>

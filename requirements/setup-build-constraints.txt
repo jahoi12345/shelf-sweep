@@ -1,0 +1,2 @@
+# CLIP's pinned legacy setup.py imports pkg_resources (removed in setuptools 81).
+setuptools==80.9.0

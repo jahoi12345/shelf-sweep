@@ -1,0 +1,21 @@
+{
+ "schema_version": 1,
+ "recorded_at": "2026-10-06T04:09:07+02:00",
+ "source": "user_supplied (the shelf owner's own statement)",
+ "utterance": "Stats for the Yugo Bookshelf: books 458, dimensions: 500x 286cm",
+ "claims": {
+  "physical_book_count": {
+   "value": 458,
+   "status": "user_hand_count_confirmed_exact",
+   "note": "The owner states 458 is their own exact hand count and that the video covers the entire shelf including horizontal and stacked books. Treat 458 as the target physical-book count (books only, non-books excluded). Per-instance labels still absent."
+  },
+  "dimensions_cm": {
+   "width_cm": 500,
+   "height_cm": 286,
+   "status": "user_confirmed_width_x_height_of_bookshelf",
+   "note": "500 wide x 286 high is the bookshelf face. Used as shelf-face CALIBRATION input only; held-out truth must be separate tape readings (20 spines, room).",
+   "role": "calibration_only"
+  }
+ },
+ "use_rules": "Calibration only for the shelf plane. Never reuse as evaluation truth. Count 458 remains user-stated, unverified."
+}

@@ -1,0 +1,33 @@
+# secrets and local settings
+.env
+.env.*
+!.env.example
+
+# environments, caches, build output
+.venv/
+.runtime/
+.cache/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+*.part
+_ref/
+node_modules/
+
+# data: sweeps, runs, results (never committed)
+runs/
+sweeps/*
+!sweeps/scan_registry.json
+ground_truth/
+deliverables/
+eval/spike/
+tests/.*_tmp/
+
+# model weights
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.ckpt

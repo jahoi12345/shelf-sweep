@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "purpose": "calibration",
+  "_instructions": [
+    "CALIBRATION INPUT, not evaluation truth. Fill ONLY from a dimension the person states or reads for this room, for the unit(s) you will NOT also use as held-out tape truth.",
+    "image_points_px are pixel coordinates in the saved native frame (open runs/<run>/frames/<frame_id>.jpg). plane_quad order: top-left, top-right, bottom-right, bottom-left of the unit's front face.",
+    "Delete this _instructions key and every _comment before use. Entries with provenance.independent_of_evaluation_truth != true are rejected."
+  ],
+  "calibrations": [
+    {
+      "calibration_id": "cal-001",
+      "kind": "plane_quad",
+      "frame_id": "f00000",
+      "image_points_px": [[0, 0], [0, 0], [0, 0], [0, 0]],
+      "metric": {"width_m": null, "height_m": null, "tolerance_pct": 3.0},
+      "plane": {"id": "plane-01", "role": "shelf_face"},
+      "provenance": {
+        "source": "user_supplied",
+        "actor": "<name or 'claimant'>",
+        "supplied_at": "<ISO time>",
+        "utterance": "<what was said or the note, e.g. 'tape shows 1.82 m wide by 2.03 m tall for the left unit'>",
+        "independent_of_evaluation_truth": true
+      }
+    }
+  ]
+}

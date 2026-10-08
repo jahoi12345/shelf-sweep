@@ -1,0 +1,43 @@
+{
+ "schema_version": 1,
+ "scans": [
+  {
+   "label": "YugoTest1",
+   "file": "YugoTest1.MOV",
+   "original_name": "IMG_2281.MOV",
+   "sha256": "c4041f08185bbd12a0ac12f4a39cc0be9f4661bea66e8d451bcd25117c93397b",
+   "size_bytes": 22176325,
+   "status": "imported",
+   "aliases": [
+    "IMG_2281.MOV"
+   ],
+   "browser_preview": "YugoTest1_preview_h264.mp4"
+  },
+  {
+   "label": "YugoTest2",
+   "file": "YugoTest2.MOV",
+   "original_name": "IMG_2282.MOV",
+   "sha256": "5dca93954da6c378b764d1c330899e7c8693bc1847e11cdfa1d913fb523ff56f",
+   "size_bytes": 80589000,
+   "status": "imported",
+   "aliases": [],
+   "browser_preview": "YugoTest2_preview_h264.mp4",
+   "frames_run": "runs/yugotest2_frames_v1"
+  },
+  {
+   "label": "IESTest3",
+   "file": "IESTest3.MOV",
+   "original_name": "IMG_2284.MOV",
+   "sha256": "89e18eebbeadea1d3021e8e30021b349fa49d59521ac3a33574b7ce726783a91",
+   "size_bytes": 13536199,
+   "status": "imported",
+   "aliases": [
+    "IMG_2284.MOV"
+   ],
+   "browser_preview": "IESTest3_preview_h264.mp4",
+   "hand_count": 155,
+   "hand_count_source": "user, 2026-10-06 (same shelf as live IESTest1/2)"
+  }
+ ],
+ "note": "Aliases and preview derivatives are not independent scans. Original historical paths retained."
+}

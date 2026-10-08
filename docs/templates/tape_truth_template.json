@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "purpose": "evaluation_truth",
+  "_instructions": [
+    "HELD-OUT TAPE TRUTH. Never pass this file to pipeline.scale / pipeline.room / the app; they refuse purpose != calibration / room_evidence.",
+    "Measure BEFORE looking at any model output. Use different spines/units/rooms (or at least different tape readings) from every calibration input.",
+    "Floor area tolerance 10%, wall area 15%, spine height/thickness 15% (per-sample and aggregate reported by the evaluator)."
+  ],
+  "annotator": "<name>",
+  "measured_at": "<ISO time>",
+  "spine_samples": [
+    {"sample_id": "s01", "frame_id": null, "bbox_hint_px": null, "description": "e.g. 3rd book from left, shelf 2 of unit 1, Spanish edition", "height_cm": null, "thickness_cm": null, "language": null}
+  ],
+  "room": {"length_m": null, "width_m": null, "height_m": null, "floor_area_m2": null, "wall_area_m2": null, "shelved_wall_area_m2": null,
+           "openings": [], "shape_notes": ""}
+}

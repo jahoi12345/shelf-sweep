@@ -1,0 +1,141 @@
+{
+  "repository": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+  "source_commit": "4bf51ab704fb2c5b3803cd5191b30d7dcdb51dc2",
+  "source_directory": "voice_ai_agents/insurance_claim_live_agent_team",
+  "license": "Apache-2.0",
+  "purpose": "Unmodified pinned reference source for reuse; not the library claim app implementation.",
+  "files": [
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/.env.example",
+      "path": ".env.example",
+      "sha256": "869f1c8a44eff47c1cc4db1ba0a525d323b8ce87aba234976c19fcd74c3c3ae8",
+      "bytes": 1074
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/README.md",
+      "path": "README.md",
+      "sha256": "3fd2e8c03d00f6fef66075fedc047d32c15b6c3b16a6ea291acacf5aea55e290",
+      "bytes": 7630
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/__init__.py",
+      "path": "__init__.py",
+      "sha256": "679817e93ab3cb65b0a9740a3a6e65b446b72f2864ae08220d68c0c1599e21c8",
+      "bytes": 96
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/agent.py",
+      "path": "agent.py",
+      "sha256": "3e2540dfaed2ba1ed93dba9881351609573caa44ae9a88cfd80abaf69c39ce83",
+      "bytes": 17100
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/assets/insurance-claim-live-agent-team-notebook.png",
+      "path": "assets/insurance-claim-live-agent-team-notebook.png",
+      "sha256": "b8bb365e8b5c40febe23d27f8759b6fb12bc30d89e8d62dcde1aa1ee2bd248a6",
+      "bytes": 891120
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/examples.py",
+      "path": "examples.py",
+      "sha256": "3b24f0cbadc082c5c0dd55442ecf677cb3c8721e23dea1366700a144f5ffcf4a",
+      "bytes": 2313
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/app.js",
+      "path": "live_demo/app.js",
+      "sha256": "d30397f83727eeea16de6b58cb13cc024449796ba96938444637faaa6196fe0b",
+      "bytes": 27852
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/avatar.js",
+      "path": "live_demo/avatar.js",
+      "sha256": "94b17603d736c7ffbe88c4231b2e93714de8f7598619af5d5e584d4d2e5d526f",
+      "bytes": 6997
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/index.html",
+      "path": "live_demo/index.html",
+      "sha256": "9c1c06c8f4f86984a5df94048aaeb637a0098f087392a78a3132d1db27200066",
+      "bytes": 6057
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/live_tools.py",
+      "path": "live_demo/live_tools.py",
+      "sha256": "409d8434cf0bec7a2c6381e270452b6b096fd7c985ce1f30086b8ceb247757ef",
+      "bytes": 20770
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/server.py",
+      "path": "live_demo/server.py",
+      "sha256": "9fde0e2a93746feb7b0ee6afb834be4f353ad4bbdf85e46d9b053a955e23e1fa",
+      "bytes": 52545
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/live_demo/styles.css",
+      "path": "live_demo/styles.css",
+      "sha256": "b32c075426be23facc56bd755662799f34fca930bfbb5e91fac9f11950d3cf91",
+      "bytes": 20734
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/policies.py",
+      "path": "policies.py",
+      "sha256": "6446ae33e0740da679d77ee6a4f639da4263b11ae060a5629e9f6721ab02e88a",
+      "bytes": 28942
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/policy_directory.py",
+      "path": "policy_directory.py",
+      "sha256": "846e3716fbe576a3fca4acc827e4bec339a070e31eb61f7e81bde1d4afdb03d8",
+      "bytes": 7176
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/requirements.txt",
+      "path": "requirements.txt",
+      "sha256": "9bd38461414ea3d5c5529f82570fc57a4287c6c8361f1ac29cac383e7d4dd455",
+      "bytes": 118
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/schemas.py",
+      "path": "schemas.py",
+      "sha256": "be9d9015a05c279b7994f3f5d60347bdf24ac3c447ea469c1936dfa29d49543d",
+      "bytes": 6055
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/tests/avatar-player.cjs",
+      "path": "tests/avatar-player.cjs",
+      "sha256": "324e202116b06861faed0eb87105f3895c489e4f6cc6463b9ac56f3e9f78dbbe",
+      "bytes": 5121
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/tests/client-regressions.cjs",
+      "path": "tests/client-regressions.cjs",
+      "sha256": "4898ec18bd198116d31f335da76b902d39ce1e1a19b26ee51923ae5e26094aca",
+      "bytes": 9140
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/tests/test_avatar.py",
+      "path": "tests/test_avatar.py",
+      "sha256": "a35a77d8ed9b4902119b05aa19c36f23e40cad1bf0466985fe7beb951c7e9668",
+      "bytes": 3889
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/tests/test_live_turns.py",
+      "path": "tests/test_live_turns.py",
+      "sha256": "1398db83e5606dbd6eebfefe0379768aa01757ca3d6a737c56ab3368d3516bb2",
+      "bytes": 6568
+    },
+    {
+      "source_path": "voice_ai_agents/insurance_claim_live_agent_team/tests/test_regressions.py",
+      "path": "tests/test_regressions.py",
+      "sha256": "d9a59ad891e63343bab5214e58d96383749301e4cf22e148f2fc05ddcacc74ce",
+      "bytes": 22617
+    },
+    {
+      "source_path": "LICENSE",
+      "path": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    }
+  ]
+}

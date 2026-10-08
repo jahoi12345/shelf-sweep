@@ -1,0 +1,137 @@
+<!doctype html>
+<!-- Laptop watch page (count banner, voice transcript, claim packet viewer): read-only view of the phone's sweep, end to end.
+     Served only on the loopback server (http://127.0.0.1:4182/watch). -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Sweep watch</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/watch.css" />
+  </head>
+  <body>
+    <div class="watch">
+      <header class="w-bar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <h1>Sweep watch</h1>
+            <p class="brand-sub">Read-only view of the phone's sweep · this Mac only</p>
+          </div>
+        </div>
+        <div class="w-pick">
+          <label for="sweepPick" class="small">Sweep</label>
+          <select id="sweepPick" aria-label="Sweep to watch"><option value="">Follow the newest active sweep</option></select>
+          <span id="conn" class="small" aria-live="polite">connecting</span>
+        </div>
+      </header>
+
+      <main class="w-main">
+        <p id="empty" class="w-empty" hidden>No sweep yet. Start one on the phone; this page follows it automatically.</p>
+
+        <section id="hero" class="card w-hero" aria-label="Book count" aria-live="polite">
+          <div class="w-hero-main">
+            <span id="heroLabel" class="lbl">Book count</span>
+            <span id="heroCount" class="w-hero-num">—</span>
+            <span id="heroSub" class="w-hero-sub"></span>
+          </div>
+          <dl id="heroFacts" class="w-hero-facts"></dl>
+        </section>
+
+        <section class="w-live card" aria-label="During the sweep">
+          <div class="w-frame">
+            <img id="frame" alt="Latest evidence frame from the phone" hidden />
+            <p id="noFrame" class="w-noframe">Waiting for the first evidence frame</p>
+            <span id="frameTag" class="w-frametag" hidden></span>
+          </div>
+          <div class="w-stats">
+            <div class="w-state"><span id="phaseChip" class="w-chip">—</span><span id="runId" class="small"></span></div>
+            <dl class="w-kv">
+              <div><dt>Elapsed</dt><dd id="elapsed">—</dd></div>
+              <div><dt>Frames received</dt><dd id="frames">—</dd></div>
+              <div><dt>Live book count</dt><dd id="liveCount">—</dd></div>
+              <div><dt>Capture</dt><dd><span id="quality" class="w-quality q-unknown"><span class="q-dot"></span><span id="qualityWord">—</span></span></dd></div>
+            </dl>
+            <h2 class="w-h2">Notices <span id="noticeCount" class="small"></span></h2>
+            <ol id="notices" class="w-notices" aria-live="polite"></ol>
+            <p id="noNotices" class="small">No notices yet.</p>
+          </div>
+        </section>
+
+        <div class="w-row">
+        <section class="card w-proc" aria-label="After End">
+          <h2 class="w-h2">After End</h2>
+          <ol id="finSteps" class="w-steps"></ol>
+          <div id="firstCount" class="w-count" hidden></div>
+          <h2 class="w-h2">Post-sweep queue</h2>
+          <ol id="postSteps" class="w-steps"></ol>
+          <p id="postNote" class="small"></p>
+          <div id="finalCount" class="w-count final" hidden></div>
+        </section>
+
+        <section class="card w-talk" aria-label="Voice conversation">
+          <h2 class="w-h2">Conversation <span id="talkCount" class="small"></span></h2>
+          <p class="small w-note">What the person said and what the voice agent said, as finished turns (text only, no audio).</p>
+          <ol id="talk" class="w-talk-list" aria-live="polite"></ol>
+          <p id="noTalk" class="small">No conversation yet.</p>
+        </section>
+        </div>
+
+        <section id="packetCard" class="card w-packet" aria-label="Claim packet">
+          <div class="w-packet-head">
+            <h2 class="w-h2">Claim packet <span id="pkStatus" class="w-chip"></span></h2>
+            <div class="w-packet-tools">
+              <span id="pkUpdated" class="small"></span>
+              <button id="pkRawToggle" type="button" class="ghost-button" aria-pressed="false">Raw JSON</button>
+              <a id="pkDownload" class="ghost-button" href="#" download>Download JSON</a>
+            </div>
+          </div>
+          <p id="pkEmpty" class="small">The claim packet is written when the sweep ends.</p>
+          <div id="pkBody" hidden>
+            <p id="pkNotice" class="small w-note"></p>
+            <ul id="pkIssues" class="w-issues"></ul>
+            <h3 class="w-h3">Totals</h3>
+            <dl id="pkTotals" class="w-grid"></dl>
+            <h3 class="w-h3">Books <span id="bkCount" class="small"></span></h3>
+            <div class="w-tablebar">
+              <input id="bkSearch" type="search" placeholder="Search title, author, text, id" aria-label="Search books" />
+              <select id="bkFilter" aria-label="Filter books">
+                <option value="">All books</option>
+                <option value="identified">Identified</option>
+                <option value="priced">Priced</option>
+                <option value="unidentified">Unidentified</option>
+              </select>
+              <label class="small"><input id="bkThumbs" type="checkbox" checked /> Spine crops</label>
+            </div>
+            <div class="w-tablewrap"><table id="bkTable" class="w-table"><thead></thead><tbody></tbody></table></div>
+            <p id="bkMore" class="small"></p>
+            <h3 class="w-h3">Other items <span id="itCount" class="small"></span></h3>
+            <div class="w-tablewrap short"><table id="itTable" class="w-table"><thead></thead><tbody></tbody></table></div>
+            <div class="w-two">
+              <div>
+                <h3 class="w-h3">Pricing</h3>
+                <dl id="pkPricing" class="w-grid small-grid"></dl>
+              </div>
+              <div>
+                <h3 class="w-h3">Room and measurement</h3>
+                <dl id="pkRoom" class="w-grid small-grid"></dl>
+              </div>
+            </div>
+            <h3 class="w-h3">Second country <span id="scHead" class="small"></span></h3>
+            <div class="w-tablewrap short"><table id="scTable" class="w-table"><thead><tr><th>#</th><th>Book</th><th>US new</th><th>US used</th><th>New</th><th>Used</th></tr></thead><tbody></tbody></table></div>
+            <h3 class="w-h3">Review queue <span id="rqCount" class="small"></span></h3>
+            <div class="w-tablewrap short"><table id="rqTable" class="w-table"><thead><tr><th>Ref</th><th>Severity</th><th>Reason</th><th>Details</th></tr></thead><tbody></tbody></table></div>
+            <h3 class="w-h3">Stage status</h3>
+            <div class="w-tablewrap short"><table id="pkStages" class="w-table"><thead><tr><th>Stage</th><th>Status</th><th>Time</th><th>Detail</th></tr></thead><tbody></tbody></table></div>
+          </div>
+          <div id="pkRaw" class="w-raw" hidden>
+            <p class="small">The packet as saved, with absolute file paths shortened. Open a section to see it.</p>
+            <div id="pkRawSections"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/watch.js"></script>
+  </body>
+</html>

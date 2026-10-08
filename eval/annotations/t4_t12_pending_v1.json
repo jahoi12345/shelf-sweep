@@ -1,0 +1,66 @@
+{
+  "annotation_version": 1,
+  "dataset_id": "baseline",
+  "provenance": {
+    "source_type": "human",
+    "annotator": null,
+    "annotated_at": null,
+    "reviewer": null,
+    "reviewed_at": null,
+    "review_status": "pending",
+    "frozen_at": null,
+    "notes": "Blank human annotation template. No model-created labels. Independent review and freeze required."
+  },
+  "coverage": {
+    "whole_video": false,
+    "physical_instances_complete": false,
+    "physical_inventory_complete": false,
+    "video_path": "sweeps/IMG_2281.MOV",
+    "timestamp_ranges_s": [],
+    "shelves_and_clutter_types": [],
+    "gaps": [
+      "Not labelled; full video coverage and physical inventory unknown"
+    ]
+  },
+  "frames": [
+    {
+      "frame_id": "f00000",
+      "timestamp_s": 4,
+      "image_path": "frames/t4.jpg",
+      "width_px": 1920,
+      "height_px": 1080,
+      "exhaustive": false,
+      "reviewed": false,
+      "objects": [],
+      "notes": null
+    },
+    {
+      "frame_id": "f00001",
+      "timestamp_s": 12,
+      "image_path": "frames/t12.jpg",
+      "width_px": 1920,
+      "height_px": 1080,
+      "exhaustive": false,
+      "reviewed": false,
+      "objects": [],
+      "notes": null
+    }
+  ],
+  "object_template": {
+    "annotation_id": null,
+    "instance_id": null,
+    "bbox_xyxy": null,
+    "kind": null,
+    "category": null,
+    "orientation": null,
+    "title_legible": null,
+    "visible_text": null,
+    "accepted_titles": [],
+    "author_text": null,
+    "publisher_text": null,
+    "edition_evidence": null,
+    "isbn_evidence": null,
+    "occlusion": null,
+    "notes": null
+  }
+}

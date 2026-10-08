@@ -1,0 +1,300 @@
+{
+ "purpose": "DEV tuning labels ONLY",
+ "provenance": {
+  "source_type": "model_read",
+  "annotator": "an AI model reading best-view crops of the listed run by eye",
+  "human_truth": false,
+  "warning": "NOT human truth, not frozen, may contain mistakes; never use for reported accuracy; only for relative comparison of reader preprocessing/engines on the same crops.",
+  "created": "2026-10-06"
+ },
+ "run": "runs/worker1_titles_v8_YugoTest1_groupread_preproc",
+ "labels": [
+  {
+   "observation_id": "f00068-o023",
+   "crop_path": "crops/193c4ced9d4cfdcd5934.png",
+   "title": "The Sum of All Fears",
+   "author": "Tom Clancy",
+   "ocr_text_at_labeling": "SUM\nALL\nFEARS\nTOM\nCLANCY"
+  },
+  {
+   "observation_id": "f00068-o016",
+   "crop_path": "crops/f6dbe601dd0697189b43.png",
+   "title": "Michael Jordan",
+   "author": "",
+   "ocr_text_at_labeling": "MICHAEL\nJORDAN"
+  },
+  {
+   "observation_id": "f00048-o000",
+   "crop_path": "crops/c38ce1f024327c791cdf.png",
+   "title": "Las Puertas de Atenas",
+   "author": "Conn Iggulden",
+   "ocr_text_at_labeling": "PUERTAS\nATENAS CONNIGGULDEN"
+  },
+  {
+   "observation_id": "f00000-o007",
+   "crop_path": "crops/7f4a06689a05d34bc229.png",
+   "title": "Los hábitos de la gente altamente efectiva",
+   "author": "Stephen R. Covey",
+   "ocr_text_at_labeling": "hábitos de la gente tamente Cva"
+  },
+  {
+   "observation_id": "f00000-o002",
+   "crop_path": "crops/480d559ad143a18e25c6.png",
+   "title": "The Devil's Halo",
+   "author": "Chris Fox",
+   "ocr_text_at_labeling": "CHRIS FOX ERESIN >"
+  },
+  {
+   "observation_id": "f00068-o010",
+   "crop_path": "crops/5d06587d99a9ebc5f92c.png",
+   "title": "arquitectura",
+   "author": "",
+   "ocr_text_at_labeling": "arquitectura"
+  },
+  {
+   "observation_id": "f00068-o000",
+   "crop_path": "crops/699cb0fff9b0eab6f1a5.png",
+   "title": "The Cuckoo's Calling",
+   "author": "Robert Galbraith",
+   "ocr_text_at_labeling": "CUKOO's CAINC CA"
+  },
+  {
+   "observation_id": "f00068-o011",
+   "crop_path": "crops/64896fadd74b11b1b51b.png",
+   "title": "The Silkworm",
+   "author": "Robert Galbraith",
+   "ocr_text_at_labeling": "SILAWORM CASRATH"
+  },
+  {
+   "observation_id": "f00048-o005",
+   "crop_path": "crops/adf1ac4ba0e6f3e6e1e6.png",
+   "title": "Obsessed",
+   "author": "",
+   "ocr_text_at_labeling": "essed e"
+  },
+  {
+   "observation_id": "f00096-o000",
+   "crop_path": "crops/2b70de016910fe5f5a5a.png",
+   "title": "Crimen y castigo",
+   "author": "Fiódor Dostoyevski",
+   "ocr_text_at_labeling": "6 CRIMENY CASTIGO Frider Dotipanhi"
+  },
+  {
+   "observation_id": "f00068-o031",
+   "crop_path": "crops/f3d82db96439c78c7c3a.png",
+   "title": "Banana Fish",
+   "author": "",
+   "ocr_text_at_labeling": "BANANA FISH"
+  },
+  {
+   "observation_id": "f00000-o006",
+   "crop_path": "crops/7be29272cc866303d2a4.png",
+   "title": "",
+   "author": "Anita Shreve",
+   "ocr_text_at_labeling": "ANITA SHR"
+  },
+  {
+   "observation_id": "f00048-o044",
+   "crop_path": "crops/06f7ff8d038d1cc42848.png",
+   "title": "Rompe la barrera del no",
+   "author": "Chris Voss",
+   "ocr_text_at_labeling": "0 ON B8 YE38EYE Y1 3aN08"
+  },
+  {
+   "observation_id": "f00000-o054",
+   "crop_path": "crops/76b6a1564637638e3b61.png",
+   "title": "Physiology: A Student's Self-test Colouring Book",
+   "author": "",
+   "ocr_text_at_labeling": "Physiology Asatrot se Noed"
+  },
+  {
+   "observation_id": "f00048-o010",
+   "crop_path": "crops/6fc9e213dd86d16e5534.png",
+   "title": "acosada",
+   "author": "Brian Freeman",
+   "ocr_text_at_labeling": "acosada"
+  },
+  {
+   "observation_id": "f00096-o004",
+   "crop_path": "crops/1ec3a2b67c848a41b91e.png",
+   "title": "",
+   "author": "José Díaz Herrera e Isabel Durán",
+   "ocr_text_at_labeling": "José Diaz Herrera e Iabel Darin - Amar"
+  },
+  {
+   "observation_id": "f00000-o016",
+   "crop_path": "crops/64d252bd3b1680f3e09d.png",
+   "title": "Pacto de silencio",
+   "author": "José Díaz Herrera e Isabel Durán",
+   "ocr_text_at_labeling": "Jese Dius Horrors e Sabel Durin Pacte de sllondo"
+  },
+  {
+   "observation_id": "f00068-o026",
+   "crop_path": "crops/38df9fc8da51dd7cb019.png",
+   "title": "",
+   "author": "Ralph Lauren",
+   "ocr_text_at_labeling": "RAPH LAUREN -"
+  },
+  {
+   "observation_id": "f00047-o050",
+   "crop_path": "crops/1c981470d26289864d96.png",
+   "title": "The Things They Carried",
+   "author": "Tim O'Brien",
+   "ocr_text_at_labeling": "Tim O'lelen"
+  },
+  {
+   "observation_id": "f00048-o060",
+   "crop_path": "crops/4e4cb92879eaa6866d9a.png",
+   "title": "",
+   "author": "Claire Douglas",
+   "ocr_text_at_labeling": "Claine Dongelas ne"
+  },
+  {
+   "observation_id": "f00068-o041",
+   "crop_path": "crops/b82348e3250f79a11663.png",
+   "title": "Murdle",
+   "author": "",
+   "ocr_text_at_labeling": "L AUROLEG"
+  },
+  {
+   "observation_id": "f00068-o006",
+   "crop_path": "crops/1079faf163f68ac0cc61.png",
+   "title": "El idiota",
+   "author": "",
+   "ocr_text_at_labeling": "FL.TA Soe"
+  },
+  {
+   "observation_id": "f00000-o017",
+   "crop_path": "crops/9e7a19f49e8b5bf2908e.png",
+   "title": "Utopía",
+   "author": "Tomás Moro",
+   "ocr_text_at_labeling": "UTOR TOMÁS MORO"
+  },
+  {
+   "observation_id": "f00048-o059",
+   "crop_path": "crops/3ac4c0dd2f831f4b9b2e.png",
+   "title": "Murdle",
+   "author": "",
+   "ocr_text_at_labeling": "MUROLET"
+  },
+  {
+   "observation_id": "f00096-o018",
+   "crop_path": "crops/0a95f368dfa0a036bc8d.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "(h| (ASECIMAGUERAMUDIAL 11 uf"
+  },
+  {
+   "observation_id": "f00096-o012",
+   "crop_path": "crops/e73de1636e4489d8301a.png",
+   "title": "El Presidente",
+   "author": "Pilar Cernuda",
+   "ocr_text_at_labeling": "le Pilar Cermud dha l hesdanle"
+  },
+  {
+   "observation_id": "f00000-o053",
+   "crop_path": "crops/7ca773426bca46243138.png",
+   "title": "The Connellys of County Down",
+   "author": "Tracey Lange",
+   "ocr_text_at_labeling": "S Meactriales"
+  },
+  {
+   "observation_id": "f00096-o016",
+   "crop_path": "crops/0c18d3524a45b5ba607a.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "il LA SCUGUEIA MURAL -1"
+  },
+  {
+   "observation_id": "f00096-o014",
+   "crop_path": "crops/2a8caf8d7aecc3fcf222.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "I EA SSC"
+  },
+  {
+   "observation_id": "f00096-o019",
+   "crop_path": "crops/87c1d09bee34a71ca0a7.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "1 I1 ILASEGU NOA GUERRA MU SIALH II E!"
+  },
+  {
+   "observation_id": "f00000-o041",
+   "crop_path": "crops/ab5370c9ff79612e71f2.png",
+   "title": "",
+   "author": "Woody Allen Eric Lax",
+   "ocr_text_at_labeling": "WoONy AWCn"
+  },
+  {
+   "observation_id": "f00091-o005",
+   "crop_path": "crops/8b586d1c3bf73cfde756.png",
+   "title": "Little Women",
+   "author": "Louisa May Alcott",
+   "ocr_text_at_labeling": "Little Wemen LauaMey"
+  },
+  {
+   "observation_id": "f00096-o026",
+   "crop_path": "crops/e196f6d2d00b2013fa9e.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "F8AS6 101"
+  },
+  {
+   "observation_id": "f00068-o013",
+   "crop_path": "crops/90c08bba11f013ec9021.png",
+   "title": "Londinium",
+   "author": "",
+   "ocr_text_at_labeling": "Londlnium"
+  },
+  {
+   "observation_id": "f00096-o008",
+   "crop_path": "crops/9fc815dd368c7d03e1c0.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "NDA GUE"
+  },
+  {
+   "observation_id": "f00096-o007",
+   "crop_path": "crops/802ef750c693f8177ea7.png",
+   "title": "Un humorista en la España de Franco",
+   "author": "Evaristo Acevedo",
+   "ocr_text_at_labeling": "Un humorista en la ESP"
+  },
+  {
+   "observation_id": "f00068-o028",
+   "crop_path": "crops/1a7a843887c0f8bbde6c.png",
+   "title": "Airframe",
+   "author": "Michael Crichton",
+   "ocr_text_at_labeling": "BICBIOR"
+  },
+  {
+   "observation_id": "f00000-o049",
+   "crop_path": "crops/ac4227f083c02d0a92e8.png",
+   "title": "Flash Boys",
+   "author": "Michael Lewis",
+   "ocr_text_at_labeling": "FLASH BOYS 1 MICHAEL LEWIS"
+  },
+  {
+   "observation_id": "f00048-o048",
+   "crop_path": "crops/0918d8f80252bf2a5529.png",
+   "title": "Esto no es una casa",
+   "author": "Ramón Esteve",
+   "ocr_text_at_labeling": "ESTEVE"
+  },
+  {
+   "observation_id": "f00096-o021",
+   "crop_path": "crops/6cb0ec64e083811f72a2.png",
+   "title": "La Segunda Guerra Mundial",
+   "author": "",
+   "ocr_text_at_labeling": "n e AL fonf"
+  },
+  {
+   "observation_id": "f00068-o027",
+   "crop_path": "crops/2fa1f8fd1ee677c9b9c5.png",
+   "title": "The Hollow Crown",
+   "author": "",
+   "ocr_text_at_labeling": "The HCELCiWCER"
+  }
+ ]
+}

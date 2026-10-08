@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frames and keyframes · Library Contents Claim</title>
+  <link rel="stylesheet" href="/frame-browser.css">
+</head>
+<body>
+  <header>
+    <div><p class="eyebrow">Library contents claim</p><h1>Frames and keyframes</h1></div>
+    <a href="/">Back to sweep</a>
+  </header>
+  <main>
+    <section class="toolbar" aria-label="Frame browsing controls">
+      <label>Recording / run<select id="runSelect" aria-label="Recording or run"></select></label><label title="Also list older experiment runs (kept on disk)"><input type="checkbox" id="showAllRuns"> Show all runs</label>
+      <label>Show<select id="frameFilter" aria-label="Frame filter"><option value="all">All frames</option><option value="keyframes">Keyframes only</option></select></label>
+      <button id="refreshButton" type="button">Refresh frames</button>
+      <span id="counts" class="muted"></span>
+    </section>
+    <p id="sourceNote" class="source-note"></p>
+    <p id="error" role="alert" hidden></p>
+    <section class="viewer" aria-label="Individual frame viewer">
+      <div class="image-stage" id="imageStage">
+        <p id="emptyMessage">Loading saved frames…</p>
+        <img id="frameImage" alt="" hidden>
+      </div>
+      <div class="frame-details">
+        <div class="frame-heading"><h2 id="frameTitle">Select a frame</h2><span id="keyframeBadge" class="badge" hidden>Keyframe</span></div>
+        <p id="frameMeta" class="muted"></p>
+        <p id="qualityMeta" class="muted"></p>
+        <p id="selectionMeta" class="muted"></p>
+        <div class="navigation">
+          <button id="previousFrame" type="button" aria-label="Previous frame" disabled>← Previous</button>
+          <label class="jump">Frame <input id="framePosition" type="number" min="1" value="1" aria-label="Frame number" disabled> <span id="positionTotal">/ 0</span></label>
+          <button id="nextFrame" type="button" aria-label="Next frame" disabled>Next →</button>
+          <button id="zoomButton" type="button" aria-label="Toggle image size" aria-pressed="false" disabled>100% size</button>
+          <a id="fullResolution" target="_blank" rel="noopener" hidden>Open full resolution ↗</a>
+          <a id="downloadFrame" download hidden>Save image</a>
+        </div>
+        <p class="hint">Use ← / → to step through frames. Click the image to switch between fit and 100% size; scroll to inspect details.</p>
+      </div>
+    </section>
+    <section class="gallery-section" aria-label="Frame thumbnails">
+      <h2>Choose a frame</h2>
+      <div id="frameGallery" class="gallery"></div>
+    </section>
+  </main>
+  <script src="/frame-browser.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Human evidence annotations</title>
+<style>body{margin:20px;font:15px system-ui;color:#202c39;background:#f2f4f7}h1{font-size:23px}button,input,select{padding:7px;margin:3px}main{display:grid;grid-template-columns:minmax(0,3fr) minmax(270px,1fr);gap:18px}.scene{max-height:75vh;position:relative;align-self:start;overflow:auto;border:1px solid #555}canvas{width:100%;display:block;cursor:crosshair}textarea{width:96%;height:340px;font:12px monospace}#provenance{height:190px}.status{color:#9b3b13}label{display:block}pre{white-space:pre-wrap}</style>
+<h1>Human annotation · original frame evidence</h1>
+<p>Draw every visible book and non-book object. Read titles from evidence; unknown stays null. No model boxes or suggested text are loaded. Export saves JSON locally.</p>
+<select id="frame"></select><button id="fit">Fit frame</button><button id="native">Native pixels</button><button id="zoom">2× view</button><button id="export">Export labels</button><label style="display:inline">Import labels <input id="import" type="file" accept="application/json"></label>
+<main><div><div class="scene"><canvas id="canvas"></canvas></div><p id="status" class="status"></p></div>
+<div><label><input id="exhaustive" type="checkbox"> Exhaustive frame labelling completed</label><label><input id="reviewed" type="checkbox"> Human reviewed this frame (self-review allowed)</label>
+<p>Selected object:</p>
+<label>Kind <select id="kind"><option value="">Unknown</option><option value="book">Book</option><option value="non_book">Non-book</option><option value="ambiguous">Ambiguous</option></select></label>
+<label>Category <input id="category" placeholder="book, plant, pot, framed_sign, shelving…"></label>
+<label>Physical ID <input id="instance" placeholder="Same physical copy across views"></label>
+<label>Human title legibility <select id="legible"><option value="">Unknown</option><option value="true">Full title legible</option><option value="false">Unreadable</option></select></label>
+<label>Literal visible text <input id="literal"></label><label>Accepted native title <input id="title"></label>
+<label>Human text language <select id="language"><option value="">Unknown</option><option value="es">Spanish</option><option value="en">English</option><option value="mul">Multilingual</option></select></label>
+<button id="quickSave">Save fields</button>
+<p>All object fields (native pixels; advanced JSON):</p><textarea id="object"></textarea><button id="save">Save object changes</button><button id="delete">Delete selected box</button>
+<p>Attributable human review (one person is sufficient):</p>
+<label>Annotator <input id="annotator" placeholder="Your name"></label>
+<label>Review mode <select id="reviewmode"><option value="self_reviewed">Self-reviewed</option><option value="independent">Optional independent review</option></select></label>
+<label>Independent reviewer <input id="reviewer" placeholder="Only if another human reviewed"></label>
+<button id="freeze">I reviewed these labels — freeze this version</button>
+<p>Human provenance (editable JSON):</p><textarea id="provenance"></textarea><button id="saveprov">Save provenance</button>
+<p>Coverage declarations:</p><textarea id="coverage" style="height:180px"></textarea><button id="savecov">Save coverage</button></div></main>
+<script>
+const payload=__ANNOTATION_PAYLOAD__;
+let labels=payload.annotations,current=0,selected=-1,start=null,image=new Image();
+const el=id=>document.getElementById(id), canvas=el('canvas'),ctx=canvas.getContext('2d');
+const frame=()=>labels.frames[current];
+function status(s){el('status').textContent=s;}
+function menus(){el('frame').replaceChildren();labels.frames.forEach((f,i)=>{let o=document.createElement('option');o.value=i;o.textContent=`${f.frame_id} · ${f.timestamp_s}s`;el('frame').append(o)});el('provenance').value=JSON.stringify(labels.provenance,null,2);el('coverage').value=JSON.stringify(labels.coverage,null,2);}
+function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(image,0,0);frame().objects.forEach((o,i)=>{let [x,y,x1,y1]=o.bbox_xyxy;ctx.strokeStyle=i===selected?'#ffb100':o.kind==='book'?'#00eaff':'#f264ff';ctx.lineWidth=3;ctx.strokeRect(x,y,x1-x,y1-y);ctx.fillStyle=ctx.strokeStyle;ctx.font='18px sans-serif';ctx.fillText(o.annotation_id,x,y+19)});}
+function selectedFields(){let o=selected<0?{}:frame().objects[selected];el('object').value=selected<0?'':JSON.stringify(o,null,2);el('kind').value=o.kind||'';el('category').value=o.category||'';el('instance').value=o.instance_id||'';el('legible').value=o.title_legible==null?'':String(o.title_legible);el('literal').value=o.visible_text||'';el('title').value=(o.accepted_titles||[])[0]||'';el('language').value=o.language_code||'';draw();}
+function invalidateFreeze(){labels.provenance.review_status='pending';labels.provenance.frozen_at=null;el('provenance').value=JSON.stringify(labels.provenance,null,2);}
+function changed(){frame().reviewed=false;el('reviewed').checked=false;invalidateFreeze();}
+el('quickSave').onclick=()=>{if(selected<0)return;let o=frame().objects[selected];Object.assign(o,{kind:el('kind').value||null,category:el('category').value||null,instance_id:el('instance').value.trim()||null,title_legible:el('legible').value===''?null:el('legible').value==='true',visible_text:el('literal').value||null,accepted_titles:el('title').value?[el('title').value]:[],language_code:el('language').value||null});changed();selectedFields();status('Human fields saved; review the changed frame before freezing.');};
+el('freeze').onclick=()=>{let name=el('annotator').value.trim(),mode=el('reviewmode').value,reviewer=el('reviewer').value.trim();if(!name){status('Enter the human annotator name.');return;}if(mode==='independent'&&(!reviewer||reviewer===name)){status('Independent review requires a different named human. Self-review is sufficient.');return;}if(labels.frames.some(f=>f.exhaustive&&!f.reviewed)){status('Review every frame marked exhaustive before freezing.');return;}if(!labels.frames.some(f=>f.exhaustive&&f.reviewed)){status('Review at least one exhaustively labelled frame first.');return;}let now=new Date().toISOString();Object.assign(labels.provenance,{source_type:'human',annotator:name,reviewer:mode==='self_reviewed'?name:reviewer,review_mode:mode,review_status:'approved',reviewed_at:now,frozen_at:now});el('provenance').value=JSON.stringify(labels.provenance,null,2);status('Your review/freeze declaration recorded. Export a new file and keep it unchanged for baseline/correction scoring.');};
+function loadFrame(){selected=-1;canvas.style.width='100%';canvas.width=frame().width_px;canvas.height=frame().height_px;image.onload=()=>{draw();status('Native coordinates. Drag to add a box; click to select. Tiny/blurred titles remain unknown.');};image.onerror=()=>status('Original evidence could not load. Check the HTTP evidence mount or local file path.');image.src=payload.images[frame().frame_id];el('exhaustive').checked=frame().exhaustive;el('reviewed').checked=frame().reviewed;el('object').value='';}
+function point(e){let r=canvas.getBoundingClientRect();return [(e.clientX-r.left)*canvas.width/r.width,(e.clientY-r.top)*canvas.height/r.height];}
+canvas.onpointerdown=e=>{start=point(e);canvas.setPointerCapture(e.pointerId);};
+canvas.onpointerup=e=>{if(!start)return;let end=point(e),[x,y]=start;start=null;if(Math.abs(x-end[0])+Math.abs(y-end[1])<8){selected=frame().objects.findIndex(o=>x>=o.bbox_xyxy[0]&&x<=o.bbox_xyxy[2]&&y>=o.bbox_xyxy[1]&&y<=o.bbox_xyxy[3]);selectedFields();return;}
+let box=[Math.max(0,Math.round(Math.min(x,end[0]))),Math.max(0,Math.round(Math.min(y,end[1]))),Math.min(canvas.width,Math.round(Math.max(x,end[0]))),Math.min(canvas.height,Math.round(Math.max(y,end[1])))];if(box[2]<=box[0]||box[3]<=box[1])return;
+let used=new Set(labels.frames.flatMap(f=>f.objects.map(o=>o.annotation_id))),n=1;while(used.has(frame().frame_id+'-h'+n))n++;
+let obj={...structuredClone(labels.object_template),annotation_id:frame().frame_id+'-h'+n,bbox_xyxy:box};frame().objects.push(obj);changed();selected=frame().objects.length-1;frame().exhaustive=false;frame().reviewed=false;el('exhaustive').checked=false;el('reviewed').checked=false;selectedFields();};
+el('frame').onchange=e=>{current=Number(e.target.value);loadFrame();selectedFields();};
+el('exhaustive').onchange=e=>{frame().exhaustive=e.target.checked;changed();};el('reviewed').onchange=e=>{frame().reviewed=e.target.checked;invalidateFreeze();};
+el('save').onclick=()=>{try{if(selected<0)return;let o=JSON.parse(el('object').value);if(!Array.isArray(o.bbox_xyxy)||o.bbox_xyxy.length!==4)throw Error('Box needs four coordinates');frame().objects[selected]=o;changed();selectedFields();status('Saved; human review must be repeated after label changes.');}catch(e){status(e.message)}};
+el('delete').onclick=()=>{if(selected>=0){frame().objects.splice(selected,1);changed();selected=-1;frame().exhaustive=false;frame().reviewed=false;el('exhaustive').checked=false;el('reviewed').checked=false;selectedFields();}};
+el('saveprov').onclick=()=>{try{labels.provenance=JSON.parse(el('provenance').value);status('Provenance saved. Use review_mode=self_reviewed for one named human, or independent for a real second reviewer. You are responsible for approval/freeze declarations.');}catch(e){status(e.message)}};
+el('savecov').onclick=()=>{try{labels.coverage=JSON.parse(el('coverage').value);invalidateFreeze();status('Coverage saved. Partial footage does not establish whole-room inventory.');}catch(e){status(e.message)}};
+el('export').onclick=()=>{let blob=new Blob([JSON.stringify(labels,null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=labels.dataset_id+'_human_labels_v1.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);};
+el('import').onchange=async e=>{try{let a=JSON.parse(await e.target.files[0].text());if(a.annotation_version!==1)throw Error('Version must be 1');if(a.frames.some(f=>!payload.images[f.frame_id]))throw Error('Imported frame evidence is missing from this viewer');labels=a;current=0;el('fit').onclick=()=>canvas.style.width='100%';el('native').onclick=()=>canvas.style.width=canvas.width+'px';el('zoom').onclick=()=>canvas.style.width=(canvas.width*2)+'px';
+menus();loadFrame();}catch(err){status(err.message)}};
+el('fit').onclick=()=>canvas.style.width='100%';el('native').onclick=()=>canvas.style.width=canvas.width+'px';el('zoom').onclick=()=>canvas.style.width=(canvas.width*2)+'px';
+menus();loadFrame();
+</script></html>

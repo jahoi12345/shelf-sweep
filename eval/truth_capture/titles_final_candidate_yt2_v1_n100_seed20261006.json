@@ -1,0 +1,2863 @@
+{
+  "schema_version": 1,
+  "purpose": "evaluation_truth",
+  "kind": "title_labels",
+  "label_id": "titles_final_candidate_yt2_v1_n100_seed20261006",
+  "run_id": "final_candidate_yt2_v1",
+  "scan": {
+    "label": "YugoTest2",
+    "sha256": "5dca93954da6c378b764d1c330899e7c8693bc1847e11cdfa1d913fb523ff56f"
+  },
+  "annotator": "James",
+  "seed": 20261006,
+  "n_requested": 100,
+  "n_sampled": 100,
+  "stratification": "6 time bins x 3 shelf-row bands, round-robin, seeded",
+  "source_hashes": {
+    "candidates_sha256": "44ab237f7087e74a5b20dadc5db0424e4ebb0f2a18f05f2c665e72e105f4d187",
+    "readings_sha256": "e48893d6d6f7bd435af4705326e42667eb3e00c1186a82c3a4e1e967d168d863",
+    "manifest_sha256": "be008b3fa617792d776b6cb3dd7a240db249ab1dac9283a05cae0782d9fe9ce0"
+  },
+  "representative": "best-view sighting per proposed group: max(spine_width_px x frame sharpness, edge-touching x0.25)",
+  "preview": "labelling preview = in-memory x~108px-short-side upscale + median-border pad (same as the readers get); hashes are of the NATIVE crop",
+  "note": "HELD-OUT human title truth. Never read by the pipeline/engine/packet. Model readings are not shown while labelling.",
+  "created_at": "2026-10-06T16:22:15+0200",
+  "sample": [
+    {
+      "observation_id": "f00324-o006",
+      "group_id": "bk-728",
+      "frame_id": "f00324",
+      "timestamp_s": 64.83,
+      "bbox_xyxy": [
+        68,
+        0,
+        194,
+        359
+      ],
+      "crop_path": "crops_labeling/f00324-o006.png",
+      "stratum": "t5r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 0,
+      "crop_sha256": "616dffc27d57969a8d95c854210149b45f50aaae0e61cd3680a6f551c16163e5"
+    },
+    {
+      "observation_id": "f00324-o000",
+      "group_id": "bk-722",
+      "frame_id": "f00324",
+      "timestamp_s": 64.83,
+      "bbox_xyxy": [
+        1486,
+        0,
+        1599,
+        362
+      ],
+      "crop_path": "crops_labeling/f00324-o000.png",
+      "stratum": "t5r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 1,
+      "crop_sha256": "8c636da8c22ddc29e25a4aade38250bb04ca3f3d3ed2d4afc242238c386ca9b7"
+    },
+    {
+      "observation_id": "f00248-o011",
+      "group_id": "bk-593",
+      "frame_id": "f00248",
+      "timestamp_s": 49.63,
+      "bbox_xyxy": [
+        380,
+        412,
+        447,
+        1052
+      ],
+      "crop_path": "crops_labeling/f00248-o011.png",
+      "stratum": "t4r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00246-o011",
+          "frame_id": "f00246",
+          "bbox_xyxy": [
+            324,
+            402,
+            409,
+            1077
+          ]
+        }
+      ],
+      "index": 2,
+      "crop_sha256": "1209a0b2fc72fd5cfdefba6f18c04674d5c033b0800d6667eef7ff3bfb49fe59"
+    },
+    {
+      "observation_id": "f00121-o013",
+      "group_id": "bk-284",
+      "frame_id": "f00121",
+      "timestamp_s": 24.232,
+      "bbox_xyxy": [
+        1631,
+        558,
+        1716,
+        892
+      ],
+      "crop_path": "crops/aacd9baa7156a804eab6.png",
+      "stratum": "t2r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00122-o014",
+          "frame_id": "f00122",
+          "bbox_xyxy": [
+            1609,
+            617,
+            1692,
+            963
+          ]
+        }
+      ],
+      "index": 3,
+      "crop_sha256": "50244dfe8b097a1b6fdf6632c3374277851abad26fbe0a4ef2ac066623821de3"
+    },
+    {
+      "observation_id": "f00329-o004",
+      "group_id": "bk-734",
+      "frame_id": "f00329",
+      "timestamp_s": 65.83,
+      "bbox_xyxy": [
+        751,
+        235,
+        945,
+        927
+      ],
+      "crop_path": "crops/ae25d91c2400947bbd5b.png",
+      "stratum": "t5r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00328-o001",
+          "frame_id": "f00328",
+          "bbox_xyxy": [
+            619,
+            306,
+            810,
+            996
+          ]
+        },
+        {
+          "observation_id": "f00327-o003",
+          "frame_id": "f00327",
+          "bbox_xyxy": [
+            577,
+            378,
+            767,
+            1061
+          ]
+        }
+      ],
+      "index": 4,
+      "crop_sha256": "7c9e73e863a0260c2bdd849e55f668eb6d72cb6337099e6b75e961ff3a1e2cd7"
+    },
+    {
+      "observation_id": "f00083-o009",
+      "group_id": "bk-212",
+      "frame_id": "f00083",
+      "timestamp_s": 16.632,
+      "bbox_xyxy": [
+        259,
+        268,
+        372,
+        718
+      ],
+      "crop_path": "crops/2640ab3080afce39fbc3.png",
+      "stratum": "t1r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00077-o017",
+          "frame_id": "f00077",
+          "bbox_xyxy": [
+            293,
+            692,
+            380,
+            1062
+          ]
+        },
+        {
+          "observation_id": "f00085-o009",
+          "frame_id": "f00085",
+          "bbox_xyxy": [
+            295,
+            224,
+            405,
+            679
+          ]
+        }
+      ],
+      "index": 5,
+      "crop_sha256": "50538eac4f705874e47c7116161803c882b1291355e449bb9423912dcc6b0040"
+    },
+    {
+      "observation_id": "f00152-o000",
+      "group_id": "bk-341",
+      "frame_id": "f00152",
+      "timestamp_s": 30.432,
+      "bbox_xyxy": [
+        1210,
+        187,
+        1329,
+        649
+      ],
+      "crop_path": "crops_labeling/f00152-o000.png",
+      "stratum": "t2r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00149-o009",
+          "frame_id": "f00149",
+          "bbox_xyxy": [
+            1049,
+            407,
+            1156,
+            873
+          ]
+        },
+        {
+          "observation_id": "f00151-o009",
+          "frame_id": "f00151",
+          "bbox_xyxy": [
+            1161,
+            283,
+            1277,
+            751
+          ]
+        }
+      ],
+      "index": 6,
+      "crop_sha256": "b058b5af227892b4605b0805b687118a4487437dab7dbf8a0927f64c82815f56"
+    },
+    {
+      "observation_id": "f00254-o014",
+      "group_id": "bk-610",
+      "frame_id": "f00254",
+      "timestamp_s": 50.83,
+      "bbox_xyxy": [
+        766,
+        17,
+        804,
+        335
+      ],
+      "crop_path": "crops/533dcd7d6bd751c0610c.png",
+      "stratum": "t4r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00255-o013",
+          "frame_id": "f00255",
+          "bbox_xyxy": [
+            686,
+            11,
+            726,
+            307
+          ]
+        },
+        {
+          "observation_id": "f00253-o014",
+          "frame_id": "f00253",
+          "bbox_xyxy": [
+            846,
+            10,
+            893,
+            346
+          ]
+        }
+      ],
+      "index": 7,
+      "crop_sha256": "afc93dd48b207a9410662f953c041dfef0c9184ecfe7e525a3ffeed0638bf12c"
+    },
+    {
+      "observation_id": "f00077-o034",
+      "group_id": "bk-225",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        295,
+        18,
+        381,
+        468
+      ],
+      "crop_path": "crops/4e2b5dab6cda28771113.png",
+      "stratum": "t1r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 8,
+      "crop_sha256": "c1987df7e9d277827791fb78139d6c3c1373c2942c63fa4f77ad2383fbff6b9c"
+    },
+    {
+      "observation_id": "f00309-o002",
+      "group_id": "bk-676",
+      "frame_id": "f00309",
+      "timestamp_s": 61.83,
+      "bbox_xyxy": [
+        528,
+        643,
+        611,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00309-o002.png",
+      "stratum": "t5r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 9,
+      "crop_sha256": "0eda6eae9bc63b369ca5afda226e936d51e12c2e750f0bc29cc3a87a064dac5f"
+    },
+    {
+      "observation_id": "f00083-o012",
+      "group_id": "bk-216",
+      "frame_id": "f00083",
+      "timestamp_s": 16.632,
+      "bbox_xyxy": [
+        1043,
+        279,
+        1162,
+        741
+      ],
+      "crop_path": "crops/c3ea829c8f24c6f176d2.png",
+      "stratum": "t1r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00077-o022",
+          "frame_id": "f00077",
+          "bbox_xyxy": [
+            953,
+            674,
+            1055,
+            1038
+          ]
+        },
+        {
+          "observation_id": "f00085-o004",
+          "frame_id": "f00085",
+          "bbox_xyxy": [
+            1073,
+            233,
+            1187,
+            674
+          ]
+        }
+      ],
+      "index": 10,
+      "crop_sha256": "f1d7ccc77ff03d59ec6638fba9f7e322b86645b15e11e100862c08c8304f9e29"
+    },
+    {
+      "observation_id": "f00267-o005",
+      "group_id": "bk-622",
+      "frame_id": "f00267",
+      "timestamp_s": 53.43,
+      "bbox_xyxy": [
+        802,
+        332,
+        857,
+        812
+      ],
+      "crop_path": "crops/2979a25bffdc0aa0c93b.png",
+      "stratum": "t4r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00266-o006",
+          "frame_id": "f00266",
+          "bbox_xyxy": [
+            816,
+            264,
+            869,
+            778
+          ]
+        },
+        {
+          "observation_id": "f00264-o004",
+          "frame_id": "f00264",
+          "bbox_xyxy": [
+            819,
+            121,
+            878,
+            642
+          ]
+        }
+      ],
+      "index": 11,
+      "crop_sha256": "cae26d73cf5e0d2031ef855f90649eb6fda0cee3015e075c3cd8b9127deb8250"
+    },
+    {
+      "observation_id": "f00324-o007",
+      "group_id": "bk-729",
+      "frame_id": "f00324",
+      "timestamp_s": 64.83,
+      "bbox_xyxy": [
+        232,
+        0,
+        353,
+        365
+      ],
+      "crop_path": "crops_labeling/f00324-o007.png",
+      "stratum": "t5r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 12,
+      "crop_sha256": "bc96d2e97d87c58f6c1eb1b5df601c53c573449c1aebf7098c82da1a9e40ed06"
+    },
+    {
+      "observation_id": "f00220-o008",
+      "group_id": "bk-539",
+      "frame_id": "f00220",
+      "timestamp_s": 44.03,
+      "bbox_xyxy": [
+        1535,
+        562,
+        1611,
+        1031
+      ],
+      "crop_path": "crops_labeling/f00220-o008.png",
+      "stratum": "t3r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00218-o005",
+          "frame_id": "f00218",
+          "bbox_xyxy": [
+            1544,
+            537,
+            1636,
+            1003
+          ]
+        },
+        {
+          "observation_id": "f00215-o009",
+          "frame_id": "f00215",
+          "bbox_xyxy": [
+            1369,
+            477,
+            1457,
+            883
+          ]
+        }
+      ],
+      "index": 13,
+      "crop_sha256": "317d5754051ea4b8023fbed1ecaffc3e7c01bbc1fd42df5696cd0b3d26a6c8e7"
+    },
+    {
+      "observation_id": "f00077-o031",
+      "group_id": "bk-222",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        1678,
+        706,
+        1782,
+        1044
+      ],
+      "crop_path": "crops/cf8f6bd514c386ae0af8.png",
+      "stratum": "t1r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 14,
+      "crop_sha256": "14e95cad463bc13bcbdf4861114ef58bea2750b270fa1f416ef138bc641fbb78"
+    },
+    {
+      "observation_id": "f00121-o016",
+      "group_id": "bk-286",
+      "frame_id": "f00121",
+      "timestamp_s": 24.232,
+      "bbox_xyxy": [
+        427,
+        755,
+        569,
+        774
+      ],
+      "crop_path": "crops_labeling/f00121-o016.png",
+      "stratum": "t2r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 15,
+      "crop_sha256": "cb948b91cacfed457400862836896a1744039a0006b022d38a41846abe225e04"
+    },
+    {
+      "observation_id": "f00145-o000",
+      "group_id": "bk-337",
+      "frame_id": "f00145",
+      "timestamp_s": 29.032,
+      "bbox_xyxy": [
+        1110,
+        750,
+        1190,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00145-o000.png",
+      "stratum": "t2r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 16,
+      "crop_sha256": "f47f93d127bc57fdcbc7d9a86bc365b00f56b3174f4ea809f268a87cc3a7a33b"
+    },
+    {
+      "observation_id": "f00267-o003",
+      "group_id": "bk-621",
+      "frame_id": "f00267",
+      "timestamp_s": 53.43,
+      "bbox_xyxy": [
+        848,
+        254,
+        953,
+        842
+      ],
+      "crop_path": "crops/c90f71a28c9ffc2179df.png",
+      "stratum": "t4r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00266-o002",
+          "frame_id": "f00266",
+          "bbox_xyxy": [
+            864,
+            190,
+            969,
+            779
+          ]
+        },
+        {
+          "observation_id": "f00268-o001",
+          "frame_id": "f00268",
+          "bbox_xyxy": [
+            836,
+            298,
+            938,
+            908
+          ]
+        }
+      ],
+      "index": 17,
+      "crop_sha256": "9125bfd92a7740531310fea6476d7a526691bd9b520d4964569650b95639453c"
+    },
+    {
+      "observation_id": "f00077-o010",
+      "group_id": "bk-209",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        1645,
+        741,
+        1721,
+        1031
+      ],
+      "crop_path": "crops/d891e16a5dc7d220abf5.png",
+      "stratum": "t1r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00078-o007",
+          "frame_id": "f00078",
+          "bbox_xyxy": [
+            1692,
+            681,
+            1780,
+            986
+          ]
+        },
+        {
+          "observation_id": "f00081-o001",
+          "frame_id": "f00081",
+          "bbox_xyxy": [
+            1817,
+            441,
+            1920,
+            769
+          ]
+        }
+      ],
+      "index": 18,
+      "crop_sha256": "cfa33bee51394fc2e544fbc29f184844837e7194c4dea960e95b9800e2a8d23d"
+    },
+    {
+      "observation_id": "f00209-o014",
+      "group_id": "bk-474",
+      "frame_id": "f00209",
+      "timestamp_s": 41.83,
+      "bbox_xyxy": [
+        1204,
+        253,
+        1244,
+        676
+      ],
+      "crop_path": "crops_labeling/f00209-o014.png",
+      "stratum": "t3r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 19,
+      "crop_sha256": "2aedef0df31ff4f7217f5cf72671c6aabf4718b4e3e6e08b55532348f86e82ea"
+    },
+    {
+      "observation_id": "f00205-o005",
+      "group_id": "bk-433",
+      "frame_id": "f00205",
+      "timestamp_s": 41.032,
+      "bbox_xyxy": [
+        1059,
+        734,
+        1164,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00205-o005.png",
+      "stratum": "t3r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 20,
+      "crop_sha256": "bd5a41880e603f54b9050d13344d96fd1df89d3a89d5438c117056f494c0a105"
+    },
+    {
+      "observation_id": "f00038-o003",
+      "group_id": "bk-115",
+      "frame_id": "f00038",
+      "timestamp_s": 7.6,
+      "bbox_xyxy": [
+        768,
+        199,
+        883,
+        595
+      ],
+      "crop_path": "crops/fcda95d9bc7e39f27ac1.png",
+      "stratum": "t0r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00036-o003",
+          "frame_id": "f00036",
+          "bbox_xyxy": [
+            816,
+            187,
+            933,
+            587
+          ]
+        },
+        {
+          "observation_id": "f00034-o003",
+          "frame_id": "f00034",
+          "bbox_xyxy": [
+            814,
+            121,
+            932,
+            502
+          ]
+        }
+      ],
+      "index": 21,
+      "crop_sha256": "11ea0b0dbbf4c61563a9038d0c32228210b2b9b43bdff5c41e6253e5fe9656b9"
+    },
+    {
+      "observation_id": "f00259-o006",
+      "group_id": "bk-609",
+      "frame_id": "f00259",
+      "timestamp_s": 51.83,
+      "bbox_xyxy": [
+        530,
+        511,
+        637,
+        968
+      ],
+      "crop_path": "crops/1018d115535ebcf31631.png",
+      "stratum": "t4r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00260-o005",
+          "frame_id": "f00260",
+          "bbox_xyxy": [
+            554,
+            517,
+            660,
+            968
+          ]
+        },
+        {
+          "observation_id": "f00254-o010",
+          "frame_id": "f00254",
+          "bbox_xyxy": [
+            821,
+            708,
+            888,
+            1070
+          ]
+        }
+      ],
+      "index": 22,
+      "crop_sha256": "9afae1d05e91d589a5a5752c371c6bca13167916718bd7bd839b7752af9c85d7"
+    },
+    {
+      "observation_id": "f00000-o005",
+      "group_id": "bk-006",
+      "frame_id": "f00000",
+      "timestamp_s": 0.0,
+      "bbox_xyxy": [
+        708,
+        293,
+        882,
+        706
+      ],
+      "crop_path": "crops_labeling/f00000-o005.png",
+      "stratum": "t0r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 23,
+      "crop_sha256": "3c5a39f13df9ee82de68e9abd824a8d2df1cbc72c800bd364a780dd1d511950c"
+    },
+    {
+      "observation_id": "f00010-o018",
+      "group_id": "bk-040",
+      "frame_id": "f00010",
+      "timestamp_s": 2.0,
+      "bbox_xyxy": [
+        1567,
+        0,
+        1665,
+        260
+      ],
+      "crop_path": "crops_labeling/f00010-o018.png",
+      "stratum": "t0r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 24,
+      "crop_sha256": "3bac250eba0ee06ae83542359e05c4be5c86055d0225c4ba1b9c29403ed5fb4c"
+    },
+    {
+      "observation_id": "f00254-o000",
+      "group_id": "bk-596",
+      "frame_id": "f00254",
+      "timestamp_s": 50.83,
+      "bbox_xyxy": [
+        1040,
+        0,
+        1156,
+        372
+      ],
+      "crop_path": "crops_labeling/f00254-o000.png",
+      "stratum": "t4r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00255-o000",
+          "frame_id": "f00255",
+          "bbox_xyxy": [
+            975,
+            0,
+            1089,
+            338
+          ]
+        },
+        {
+          "observation_id": "f00253-o000",
+          "frame_id": "f00253",
+          "bbox_xyxy": [
+            1127,
+            0,
+            1247,
+            382
+          ]
+        }
+      ],
+      "index": 25,
+      "crop_sha256": "a7e06f62d031ff54ab90631e51672b27194784d418f92cd402380a2b7dde432b"
+    },
+    {
+      "observation_id": "f00103-o008",
+      "group_id": "bk-270",
+      "frame_id": "f00103",
+      "timestamp_s": 20.632,
+      "bbox_xyxy": [
+        0,
+        89,
+        110,
+        320
+      ],
+      "crop_path": "crops_labeling/f00103-o008.png",
+      "stratum": "t1r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 26,
+      "crop_sha256": "ce0ceb95659a4296fd0adeab9d0b577d716526b51a1bc3bf6aec0dafacc929a8"
+    },
+    {
+      "observation_id": "f00242-o006",
+      "group_id": "bk-583",
+      "frame_id": "f00242",
+      "timestamp_s": 48.43,
+      "bbox_xyxy": [
+        659,
+        761,
+        693,
+        1076
+      ],
+      "crop_path": "crops_labeling/f00242-o006.png",
+      "stratum": "t4r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 27,
+      "crop_sha256": "2f4d490a1f355f0dfc594efd5f5e5a4ba428f811a98a5e5f3bebfd7e978f36ae"
+    },
+    {
+      "observation_id": "f00207-o015",
+      "group_id": "bk-454",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        1138,
+        162,
+        1173,
+        554
+      ],
+      "crop_path": "crops_labeling/f00207-o015.png",
+      "stratum": "t3r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 28,
+      "crop_sha256": "439a87f68c78eb2ff670813a18662940bc1b45be9e76cb076522e61aad34a605"
+    },
+    {
+      "observation_id": "f00324-o004",
+      "group_id": "bk-726",
+      "frame_id": "f00324",
+      "timestamp_s": 64.83,
+      "bbox_xyxy": [
+        1251,
+        0,
+        1368,
+        387
+      ],
+      "crop_path": "crops_labeling/f00324-o004.png",
+      "stratum": "t5r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 29,
+      "crop_sha256": "ce96f28fccc051a8c8b8fef49ef0b1a609aebfc16f8320b8fecb8cca3a84ea95"
+    },
+    {
+      "observation_id": "f00135-o020",
+      "group_id": "bk-332",
+      "frame_id": "f00135",
+      "timestamp_s": 27.032,
+      "bbox_xyxy": [
+        970,
+        223,
+        1007,
+        815
+      ],
+      "crop_path": "crops_labeling/f00135-o020.png",
+      "stratum": "t2r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 30,
+      "crop_sha256": "86d5d778a7e472fe683ea6a6111d0cf38d2edf050e15a29260b8b26f6e9a979c"
+    },
+    {
+      "observation_id": "f00083-o015",
+      "group_id": "bk-213",
+      "frame_id": "f00083",
+      "timestamp_s": 16.632,
+      "bbox_xyxy": [
+        672,
+        275,
+        846,
+        724
+      ],
+      "crop_path": "crops/35993e873c514d6a4054.png",
+      "stratum": "t1r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00077-o018",
+          "frame_id": "f00077",
+          "bbox_xyxy": [
+            644,
+            696,
+            781,
+            1040
+          ]
+        },
+        {
+          "observation_id": "f00085-o010",
+          "frame_id": "f00085",
+          "bbox_xyxy": [
+            703,
+            226,
+            868,
+            663
+          ]
+        }
+      ],
+      "index": 31,
+      "crop_sha256": "9aa1b5fbafa210917af7cba012970a9f95f3526112d0bb18b8b2432779f58cca"
+    },
+    {
+      "observation_id": "f00207-o009",
+      "group_id": "bk-448",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        568,
+        145,
+        607,
+        574
+      ],
+      "crop_path": "crops_labeling/f00207-o009.png",
+      "stratum": "t3r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 32,
+      "crop_sha256": "5d82c7d634c46a3c2df0086fca13dfd1f7492c7c328bbab5a8d8c3d1521b1032"
+    },
+    {
+      "observation_id": "f00050-o024",
+      "group_id": "bk-098",
+      "frame_id": "f00050",
+      "timestamp_s": 10.0,
+      "bbox_xyxy": [
+        209,
+        734,
+        233,
+        1041
+      ],
+      "crop_path": "crops/6670d99b83f5ed5414b3.png",
+      "stratum": "t0r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00051-o019",
+          "frame_id": "f00051",
+          "bbox_xyxy": [
+            194,
+            762,
+            216,
+            1054
+          ]
+        },
+        {
+          "observation_id": "f00047-o029",
+          "frame_id": "f00047",
+          "bbox_xyxy": [
+            332,
+            759,
+            359,
+            1042
+          ]
+        }
+      ],
+      "index": 33,
+      "crop_sha256": "aca9dce475e073f9747393115a07e7e88993f28fa0f4ef4d408969c8f071320a"
+    },
+    {
+      "observation_id": "f00038-o007",
+      "group_id": "bk-131",
+      "frame_id": "f00038",
+      "timestamp_s": 7.6,
+      "bbox_xyxy": [
+        1802,
+        887,
+        1920,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00038-o007.png",
+      "stratum": "t0r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 34,
+      "crop_sha256": "4f8632dec1796a300f9f4ab1c89ecd80708fab19bf5cf076db192aceae0ef97f"
+    },
+    {
+      "observation_id": "f00267-o007",
+      "group_id": "bk-623",
+      "frame_id": "f00267",
+      "timestamp_s": 53.43,
+      "bbox_xyxy": [
+        1081,
+        403,
+        1138,
+        812
+      ],
+      "crop_path": "crops/11099719e4182d170601.png",
+      "stratum": "t4r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00266-o005",
+          "frame_id": "f00266",
+          "bbox_xyxy": [
+            1094,
+            344,
+            1150,
+            763
+          ]
+        },
+        {
+          "observation_id": "f00268-o005",
+          "frame_id": "f00268",
+          "bbox_xyxy": [
+            1064,
+            465,
+            1122,
+            885
+          ]
+        }
+      ],
+      "index": 35,
+      "crop_sha256": "90dd62bce8d51fcdd5599707a04ea577773acf732caf9afc9d0d8a66e94b8c25"
+    },
+    {
+      "observation_id": "f00207-o012",
+      "group_id": "bk-451",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        976,
+        137,
+        1009,
+        564
+      ],
+      "crop_path": "crops_labeling/f00207-o012.png",
+      "stratum": "t3r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 36,
+      "crop_sha256": "4a0dac144416652ce8db9ed8d714470045f5b0e494e733abc5ab0ad62027bc9a"
+    },
+    {
+      "observation_id": "f00077-o003",
+      "group_id": "bk-202",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        1767,
+        679,
+        1915,
+        1066
+      ],
+      "crop_path": "crops_labeling/f00077-o003.png",
+      "stratum": "t1r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00076-o002",
+          "frame_id": "f00076",
+          "bbox_xyxy": [
+            1747,
+            723,
+            1897,
+            1080
+          ]
+        },
+        {
+          "observation_id": "f00078-o009",
+          "frame_id": "f00078",
+          "bbox_xyxy": [
+            1823,
+            650,
+            1920,
+            1032
+          ]
+        }
+      ],
+      "index": 37,
+      "crop_sha256": "8b0e8b3f0a00e7a5fe6fdcf1193b7dfb5f8758cc5b29ef471c347474c74b3b3b"
+    },
+    {
+      "observation_id": "f00121-o017",
+      "group_id": "bk-287",
+      "frame_id": "f00121",
+      "timestamp_s": 24.232,
+      "bbox_xyxy": [
+        1890,
+        696,
+        1920,
+        939
+      ],
+      "crop_path": "crops_labeling/f00121-o017.png",
+      "stratum": "t2r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 38,
+      "crop_sha256": "8a3091d51e6caea818311e79d619133a62318d1b54da1a4a21a38a65c2d94ff0"
+    },
+    {
+      "observation_id": "f00016-o007",
+      "group_id": "bk-055",
+      "frame_id": "f00016",
+      "timestamp_s": 3.2,
+      "bbox_xyxy": [
+        1321,
+        0,
+        1359,
+        149
+      ],
+      "crop_path": "crops_labeling/f00016-o007.png",
+      "stratum": "t0r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 39,
+      "crop_sha256": "46b817dcb23806c3903b9b6bf98d892366e24e1f7beee02427ba5d1183fb9583"
+    },
+    {
+      "observation_id": "f00083-o014",
+      "group_id": "bk-228",
+      "frame_id": "f00083",
+      "timestamp_s": 16.632,
+      "bbox_xyxy": [
+        1532,
+        584,
+        1707,
+        612
+      ],
+      "crop_path": "crops_labeling/f00083-o014.png",
+      "stratum": "t1r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 40,
+      "crop_sha256": "ed336acd5f3dd6e345abdd53b247c51c21e51665214256c8189a5904af90a086"
+    },
+    {
+      "observation_id": "f00329-o011",
+      "group_id": "bk-750",
+      "frame_id": "f00329",
+      "timestamp_s": 65.83,
+      "bbox_xyxy": [
+        1351,
+        266,
+        1594,
+        921
+      ],
+      "crop_path": "crops/4c54006225dc6dd12b17.png",
+      "stratum": "t5r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00328-o014",
+          "frame_id": "f00328",
+          "bbox_xyxy": [
+            1311,
+            315,
+            1550,
+            968
+          ]
+        },
+        {
+          "observation_id": "f00327-o019",
+          "frame_id": "f00327",
+          "bbox_xyxy": [
+            767,
+            401,
+            946,
+            1060
+          ]
+        }
+      ],
+      "index": 41,
+      "crop_sha256": "dfaaac4edf8f7d16b5772de6c49e9067075b32ce99f1bfd4b60240fd2c7e4fe6"
+    },
+    {
+      "observation_id": "f00036-o005",
+      "group_id": "bk-116",
+      "frame_id": "f00036",
+      "timestamp_s": 7.2,
+      "bbox_xyxy": [
+        745,
+        229,
+        822,
+        388
+      ],
+      "crop_path": "crops/1489e0a0fcfb497523ed.png",
+      "stratum": "t0r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00034-o011",
+          "frame_id": "f00034",
+          "bbox_xyxy": [
+            748,
+            168,
+            825,
+            312
+          ]
+        },
+        {
+          "observation_id": "f00032-o005",
+          "frame_id": "f00032",
+          "bbox_xyxy": [
+            712,
+            72,
+            796,
+            212
+          ]
+        }
+      ],
+      "index": 42,
+      "crop_sha256": "0de22f10759571b275e5d2efcbc0713b853ccf72ded6dce824d4608f956a5273"
+    },
+    {
+      "observation_id": "f00129-o012",
+      "group_id": "bk-305",
+      "frame_id": "f00129",
+      "timestamp_s": 25.832,
+      "bbox_xyxy": [
+        919,
+        0,
+        979,
+        254
+      ],
+      "crop_path": "crops_labeling/f00129-o012.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 43,
+      "crop_sha256": "0de53c6ae454d0e6571851081ea6a507501a5215f6203dcaafb9821a35164e6b"
+    },
+    {
+      "observation_id": "f00207-o006",
+      "group_id": "bk-445",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        904,
+        64,
+        974,
+        588
+      ],
+      "crop_path": "crops/86ce7dfc0f4183bc816b.png",
+      "stratum": "t3r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 44,
+      "crop_sha256": "bc5ca0af231e7a37f564d85da509a51bcda1d0b1b5359d1f55dba917db13f427"
+    },
+    {
+      "observation_id": "f00253-o016",
+      "group_id": "bk-612",
+      "frame_id": "f00253",
+      "timestamp_s": 50.63,
+      "bbox_xyxy": [
+        1510,
+        0,
+        1635,
+        348
+      ],
+      "crop_path": "crops_labeling/f00253-o016.png",
+      "stratum": "t4r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 45,
+      "crop_sha256": "cb33ed25d444b59c7c2b4c581d5b65516b3df78672b286879000faf16a0953da"
+    },
+    {
+      "observation_id": "f00254-o016",
+      "group_id": "bk-614",
+      "frame_id": "f00254",
+      "timestamp_s": 50.83,
+      "bbox_xyxy": [
+        727,
+        3,
+        766,
+        345
+      ],
+      "crop_path": "crops_labeling/f00254-o016.png",
+      "stratum": "t4r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00255-o012",
+          "frame_id": "f00255",
+          "bbox_xyxy": [
+            643,
+            7,
+            687,
+            310
+          ]
+        },
+        {
+          "observation_id": "f00253-o018",
+          "frame_id": "f00253",
+          "bbox_xyxy": [
+            815,
+            8,
+            853,
+            348
+          ]
+        }
+      ],
+      "index": 46,
+      "crop_sha256": "c7ad4b84fa56f9af59220923a0f15d5c41ee5c91e3cefe75c28a54c4e1f6251e"
+    },
+    {
+      "observation_id": "f00159-o003",
+      "group_id": "bk-371",
+      "frame_id": "f00159",
+      "timestamp_s": 31.832,
+      "bbox_xyxy": [
+        1010,
+        148,
+        1131,
+        671
+      ],
+      "crop_path": "crops/afb93359e1d59234ae93.png",
+      "stratum": "t2r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 47,
+      "crop_sha256": "ebc0b824b3191f2dac53d53e1e6e646d48c8750f2af34df24963470a3f95909e"
+    },
+    {
+      "observation_id": "f00207-o005",
+      "group_id": "bk-444",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        1173,
+        162,
+        1217,
+        551
+      ],
+      "crop_path": "crops_labeling/f00207-o005.png",
+      "stratum": "t3r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 48,
+      "crop_sha256": "68458185cfc204004bd6ea0e230612a8dc4162369b7a908bf290972cd581f84e"
+    },
+    {
+      "observation_id": "f00181-o000",
+      "group_id": "bk-400",
+      "frame_id": "f00181",
+      "timestamp_s": 36.232,
+      "bbox_xyxy": [
+        1010,
+        286,
+        1250,
+        765
+      ],
+      "crop_path": "crops/132116c50e9f9b72f07e.png",
+      "stratum": "t3r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00179-o000",
+          "frame_id": "f00179",
+          "bbox_xyxy": [
+            1032,
+            306,
+            1272,
+            787
+          ]
+        },
+        {
+          "observation_id": "f00177-o002",
+          "frame_id": "f00177",
+          "bbox_xyxy": [
+            1075,
+            276,
+            1309,
+            748
+          ]
+        }
+      ],
+      "index": 49,
+      "crop_sha256": "e83a379b99c3e94af4d2f1f50c03de8fa20c0b82902974fe667d28ab3a1ce08b"
+    },
+    {
+      "observation_id": "f00050-o018",
+      "group_id": "bk-138",
+      "frame_id": "f00050",
+      "timestamp_s": 10.0,
+      "bbox_xyxy": [
+        1171,
+        119,
+        1260,
+        387
+      ],
+      "crop_path": "crops/4f401684f3b73bacf99f.png",
+      "stratum": "t0r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00049-o010",
+          "frame_id": "f00049",
+          "bbox_xyxy": [
+            1172,
+            124,
+            1250,
+            378
+          ]
+        },
+        {
+          "observation_id": "f00058-o006",
+          "frame_id": "f00058",
+          "bbox_xyxy": [
+            1034,
+            219,
+            1102,
+            518
+          ]
+        }
+      ],
+      "index": 50,
+      "crop_sha256": "6204cf97e9b0c0a9fa3ec44c914eebc39fcded95e5f9361c6c8f71448882a358"
+    },
+    {
+      "observation_id": "f00324-o008",
+      "group_id": "bk-730",
+      "frame_id": "f00324",
+      "timestamp_s": 64.83,
+      "bbox_xyxy": [
+        1544,
+        0,
+        1662,
+        360
+      ],
+      "crop_path": "crops_labeling/f00324-o008.png",
+      "stratum": "t5r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 51,
+      "crop_sha256": "8bf6393b5a693b31713943e8d004513467770392e11a9f92c721858f852bf5c2"
+    },
+    {
+      "observation_id": "f00220-o002",
+      "group_id": "bk-534",
+      "frame_id": "f00220",
+      "timestamp_s": 44.03,
+      "bbox_xyxy": [
+        1708,
+        469,
+        1829,
+        1027
+      ],
+      "crop_path": "crops/cbcfd015ce9e1efa60e8.png",
+      "stratum": "t3r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00218-o002",
+          "frame_id": "f00218",
+          "bbox_xyxy": [
+            1733,
+            478,
+            1851,
+            1017
+          ]
+        },
+        {
+          "observation_id": "f00215-o004",
+          "frame_id": "f00215",
+          "bbox_xyxy": [
+            1541,
+            394,
+            1635,
+            882
+          ]
+        }
+      ],
+      "index": 52,
+      "crop_sha256": "79f96067d98c14d7667320c3e6e7281573cd66cfc35fa4dd65f902d4df02f229"
+    },
+    {
+      "observation_id": "f00207-o007",
+      "group_id": "bk-446",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        1005,
+        124,
+        1060,
+        571
+      ],
+      "crop_path": "crops/6a828db45156559d60bd.png",
+      "stratum": "t3r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 53,
+      "crop_sha256": "9233ebd07eb5aaaec08b641cb1c884be0d9c90add30a64ef410110a0cd2e4546"
+    },
+    {
+      "observation_id": "f00016-o010",
+      "group_id": "bk-048",
+      "frame_id": "f00016",
+      "timestamp_s": 3.2,
+      "bbox_xyxy": [
+        1542,
+        485,
+        1620,
+        848
+      ],
+      "crop_path": "crops_labeling/f00016-o010.png",
+      "stratum": "t0r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00018-o003",
+          "frame_id": "f00018",
+          "bbox_xyxy": [
+            1532,
+            648,
+            1600,
+            991
+          ]
+        },
+        {
+          "observation_id": "f00014-o005",
+          "frame_id": "f00014",
+          "bbox_xyxy": [
+            1577,
+            377,
+            1664,
+            741
+          ]
+        }
+      ],
+      "index": 54,
+      "crop_sha256": "a23891128511695ac4b08655bc62d75a755ef10bac7d3ff5d81a67b5c4166c37"
+    },
+    {
+      "observation_id": "f00171-o000",
+      "group_id": "bk-381",
+      "frame_id": "f00171",
+      "timestamp_s": 34.232,
+      "bbox_xyxy": [
+        890,
+        0,
+        992,
+        313
+      ],
+      "crop_path": "crops_labeling/f00171-o000.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00172-o005",
+          "frame_id": "f00172",
+          "bbox_xyxy": [
+            790,
+            0,
+            902,
+            352
+          ]
+        }
+      ],
+      "index": 55,
+      "crop_sha256": "52080fec0771b03f13c5a41229a41733048348a6511c4db6a6b1a2edd81702b7"
+    },
+    {
+      "observation_id": "f00129-o003",
+      "group_id": "bk-303",
+      "frame_id": "f00129",
+      "timestamp_s": 25.832,
+      "bbox_xyxy": [
+        0,
+        6,
+        157,
+        247
+      ],
+      "crop_path": "crops_labeling/f00129-o003.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 56,
+      "crop_sha256": "83e1f1e1c925c046ab8b5b53ffc23c4ad779b52cc77305e39e48137114e4c388"
+    },
+    {
+      "observation_id": "f00077-o035",
+      "group_id": "bk-198",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        1530,
+        35,
+        1625,
+        462
+      ],
+      "crop_path": "crops/5006acec50801e132b63.png",
+      "stratum": "t1r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00072-o019",
+          "frame_id": "f00072",
+          "bbox_xyxy": [
+            1491,
+            332,
+            1608,
+            742
+          ]
+        },
+        {
+          "observation_id": "f00073-o021",
+          "frame_id": "f00073",
+          "bbox_xyxy": [
+            1487,
+            280,
+            1596,
+            691
+          ]
+        }
+      ],
+      "index": 57,
+      "crop_sha256": "c41c3674408273257143ab34c33801830322c72b2f804011e1a19322e40ced60"
+    },
+    {
+      "observation_id": "f00127-o005",
+      "group_id": "bk-293",
+      "frame_id": "f00127",
+      "timestamp_s": 25.432,
+      "bbox_xyxy": [
+        605,
+        356,
+        804,
+        843
+      ],
+      "crop_path": "crops/656c7c6d5593eb8cac41.png",
+      "stratum": "t2r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00125-o004",
+          "frame_id": "f00125",
+          "bbox_xyxy": [
+            578,
+            280,
+            792,
+            777
+          ]
+        },
+        {
+          "observation_id": "f00129-o006",
+          "frame_id": "f00129",
+          "bbox_xyxy": [
+            612,
+            506,
+            798,
+            974
+          ]
+        }
+      ],
+      "index": 58,
+      "crop_sha256": "4ef4dae62e6a70d71a9fff3b336f64fd65cccb88921b96f3ac4e4efbe83cb9f2"
+    },
+    {
+      "observation_id": "f00083-o028",
+      "group_id": "bk-239",
+      "frame_id": "f00083",
+      "timestamp_s": 16.632,
+      "bbox_xyxy": [
+        1522,
+        660,
+        1684,
+        696
+      ],
+      "crop_path": "crops_labeling/f00083-o028.png",
+      "stratum": "t1r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 59,
+      "crop_sha256": "f988e99903f2c806d4ef295325124ba6877abf780635a92e3d4127b75075ebce"
+    },
+    {
+      "observation_id": "f00275-o001",
+      "group_id": "bk-641",
+      "frame_id": "f00275",
+      "timestamp_s": 55.03,
+      "bbox_xyxy": [
+        774,
+        535,
+        926,
+        1033
+      ],
+      "crop_path": "crops/889083ea78a381795f9f.png",
+      "stratum": "t4r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 60,
+      "crop_sha256": "249927bf57fa90d0bd49a83ace972616dc7d5ea1a0423c712d092be0fa6e5c90"
+    },
+    {
+      "observation_id": "f00248-o001",
+      "group_id": "bk-584",
+      "frame_id": "f00248",
+      "timestamp_s": 49.63,
+      "bbox_xyxy": [
+        918,
+        458,
+        1009,
+        957
+      ],
+      "crop_path": "crops/a84540ebfd0594174189.png",
+      "stratum": "t4r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00246-o001",
+          "frame_id": "f00246",
+          "bbox_xyxy": [
+            888,
+            502,
+            977,
+            998
+          ]
+        },
+        {
+          "observation_id": "f00249-o000",
+          "frame_id": "f00249",
+          "bbox_xyxy": [
+            839,
+            445,
+            918,
+            949
+          ]
+        }
+      ],
+      "index": 61,
+      "crop_sha256": "341b73fe24fca7bf45d1ea7186b0eb12b9dff97ca16d9c8f2771de11d368f20d"
+    },
+    {
+      "observation_id": "f00008-o002",
+      "group_id": "bk-020",
+      "frame_id": "f00008",
+      "timestamp_s": 1.6,
+      "bbox_xyxy": [
+        608,
+        408,
+        686,
+        812
+      ],
+      "crop_path": "crops/200942680b5c4224df9b.png",
+      "stratum": "t0r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00010-o003",
+          "frame_id": "f00010",
+          "bbox_xyxy": [
+            595,
+            483,
+            663,
+            892
+          ]
+        },
+        {
+          "observation_id": "f00006-o002",
+          "frame_id": "f00006",
+          "bbox_xyxy": [
+            620,
+            356,
+            697,
+            757
+          ]
+        }
+      ],
+      "index": 62,
+      "crop_sha256": "44e75a838ca46ecaf07358e8a2892136b41d0c438d1b31c8d65f094b9cbbab8c"
+    },
+    {
+      "observation_id": "f00008-o016",
+      "group_id": "bk-031",
+      "frame_id": "f00008",
+      "timestamp_s": 1.6,
+      "bbox_xyxy": [
+        1614,
+        406,
+        1661,
+        854
+      ],
+      "crop_path": "crops/b114481072bdbdd5c3ff.png",
+      "stratum": "t0r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00010-o014",
+          "frame_id": "f00010",
+          "bbox_xyxy": [
+            1592,
+            504,
+            1631,
+            938
+          ]
+        },
+        {
+          "observation_id": "f00006-o015",
+          "frame_id": "f00006",
+          "bbox_xyxy": [
+            1618,
+            369,
+            1668,
+            808
+          ]
+        }
+      ],
+      "index": 63,
+      "crop_sha256": "8ea6ad1b0fbe30c8f8b428b9ab3406b2fe1a628f9b24735abf9f9f70fd570a8c"
+    },
+    {
+      "observation_id": "f00315-o004",
+      "group_id": "bk-707",
+      "frame_id": "f00315",
+      "timestamp_s": 63.03,
+      "bbox_xyxy": [
+        1492,
+        674,
+        1603,
+        1021
+      ],
+      "crop_path": "crops_labeling/f00315-o004.png",
+      "stratum": "t5r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 64,
+      "crop_sha256": "18b0b24b51483a0620c1081b833771819efa70ae8c79879e05303e8dc4481d03"
+    },
+    {
+      "observation_id": "f00313-o011",
+      "group_id": "bk-702",
+      "frame_id": "f00313",
+      "timestamp_s": 62.63,
+      "bbox_xyxy": [
+        1869,
+        879,
+        1920,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00313-o011.png",
+      "stratum": "t5r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 65,
+      "crop_sha256": "50bbe2ed5785a3d2f86ce2202027b40f430b75c2163e943d49adc3a70aeb295d"
+    },
+    {
+      "observation_id": "f00163-o001",
+      "group_id": "bk-375",
+      "frame_id": "f00163",
+      "timestamp_s": 32.632,
+      "bbox_xyxy": [
+        817,
+        0,
+        956,
+        429
+      ],
+      "crop_path": "crops_labeling/f00163-o001.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00165-o005",
+          "frame_id": "f00165",
+          "bbox_xyxy": [
+            680,
+            0,
+            821,
+            404
+          ]
+        }
+      ],
+      "index": 66,
+      "crop_sha256": "61cb411b0533a06d078955001beb6ae40f523959b17f61eb050f89790169a24b"
+    },
+    {
+      "observation_id": "f00311-o003",
+      "group_id": "bk-688",
+      "frame_id": "f00311",
+      "timestamp_s": 62.23,
+      "bbox_xyxy": [
+        470,
+        360,
+        581,
+        1048
+      ],
+      "crop_path": "crops_labeling/f00311-o003.png",
+      "stratum": "t5r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 67,
+      "crop_sha256": "5fc501aabd050cf749f9f9187e4e7927b6e51c17f92333e1c1bd62edb940e50a"
+    },
+    {
+      "observation_id": "f00067-o007",
+      "group_id": "bk-178",
+      "frame_id": "f00067",
+      "timestamp_s": 13.4,
+      "bbox_xyxy": [
+        1732,
+        604,
+        1877,
+        966
+      ],
+      "crop_path": "crops/e6b7d9af0049c72bc6a0.png",
+      "stratum": "t1r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00066-o008",
+          "frame_id": "f00066",
+          "bbox_xyxy": [
+            1703,
+            652,
+            1849,
+            1020
+          ]
+        },
+        {
+          "observation_id": "f00073-o006",
+          "frame_id": "f00073",
+          "bbox_xyxy": [
+            1805,
+            322,
+            1920,
+            697
+          ]
+        }
+      ],
+      "index": 68,
+      "crop_sha256": "12f7dfff2c617847d400d47c5cda73b27bd00a33f99b5789a30c0add4db376f2"
+    },
+    {
+      "observation_id": "f00205-o003",
+      "group_id": "bk-431",
+      "frame_id": "f00205",
+      "timestamp_s": 41.032,
+      "bbox_xyxy": [
+        1135,
+        691,
+        1253,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00205-o003.png",
+      "stratum": "t3r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 69,
+      "crop_sha256": "882043646466c0126a84de2d6a43b3499782063a3907732de72c6ff139fa423b"
+    },
+    {
+      "observation_id": "f00073-o018",
+      "group_id": "bk-199",
+      "frame_id": "f00073",
+      "timestamp_s": 14.632,
+      "bbox_xyxy": [
+        628,
+        860,
+        720,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00073-o018.png",
+      "stratum": "t1r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 70,
+      "crop_sha256": "fdfb727a35de0a0aeb9fb71e294d0b5e4740cd5040ed49d196264025895dd732"
+    },
+    {
+      "observation_id": "f00147-o014",
+      "group_id": "bk-348",
+      "frame_id": "f00147",
+      "timestamp_s": 29.432,
+      "bbox_xyxy": [
+        1688,
+        673,
+        1766,
+        1058
+      ],
+      "crop_path": "crops_labeling/f00147-o014.png",
+      "stratum": "t2r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00149-o015",
+          "frame_id": "f00149",
+          "bbox_xyxy": [
+            1748,
+            479,
+            1824,
+            877
+          ]
+        }
+      ],
+      "index": 71,
+      "crop_sha256": "481dd6d98d0526c3388514d2c7078ea2afdac12ac0193070b0c8ed20cd95618d"
+    },
+    {
+      "observation_id": "f00121-o009",
+      "group_id": "bk-260",
+      "frame_id": "f00121",
+      "timestamp_s": 24.232,
+      "bbox_xyxy": [
+        1001,
+        535,
+        1051,
+        895
+      ],
+      "crop_path": "crops/786abfa2bf20e6886e34.png",
+      "stratum": "t2r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00119-o007",
+          "frame_id": "f00119",
+          "bbox_xyxy": [
+            1024,
+            460,
+            1081,
+            822
+          ]
+        },
+        {
+          "observation_id": "f00122-o008",
+          "frame_id": "f00122",
+          "bbox_xyxy": [
+            1003,
+            648,
+            1045,
+            959
+          ]
+        }
+      ],
+      "index": 72,
+      "crop_sha256": "e1d0a260292b0dad6346257c801e9070673673105dce0712c6d0a75c3afab5af"
+    },
+    {
+      "observation_id": "f00104-o006",
+      "group_id": "bk-251",
+      "frame_id": "f00104",
+      "timestamp_s": 20.832,
+      "bbox_xyxy": [
+        1041,
+        0,
+        1124,
+        360
+      ],
+      "crop_path": "crops_labeling/f00104-o006.png",
+      "stratum": "t1r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00103-o009",
+          "frame_id": "f00103",
+          "bbox_xyxy": [
+            1083,
+            0,
+            1162,
+            317
+          ]
+        },
+        {
+          "observation_id": "f00102-o001",
+          "frame_id": "f00102",
+          "bbox_xyxy": [
+            1110,
+            0,
+            1185,
+            270
+          ]
+        }
+      ],
+      "index": 73,
+      "crop_sha256": "7c7b57a25068f39ec73bcc8b625fd6d2f4819345d04b28d8c09f45503e898cdf"
+    },
+    {
+      "observation_id": "f00274-o001",
+      "group_id": "bk-634",
+      "frame_id": "f00274",
+      "timestamp_s": 54.83,
+      "bbox_xyxy": [
+        768,
+        488,
+        924,
+        990
+      ],
+      "crop_path": "crops/9502dc215f49d45e858e.png",
+      "stratum": "t4r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00273-o001",
+          "frame_id": "f00273",
+          "bbox_xyxy": [
+            767,
+            425,
+            922,
+            927
+          ]
+        }
+      ],
+      "index": 74,
+      "crop_sha256": "52058b8f1c0c8adc2f72c3ef3e52cd8e0563bf096303d073f94ab6aa58063014"
+    },
+    {
+      "observation_id": "f00165-o003",
+      "group_id": "bk-376",
+      "frame_id": "f00165",
+      "timestamp_s": 33.032,
+      "bbox_xyxy": [
+        423,
+        1,
+        531,
+        394
+      ],
+      "crop_path": "crops_labeling/f00165-o003.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 75,
+      "crop_sha256": "5619400b5f691d7983a814740fbb04865f5c1faaaee66e02c35644b18fc7b4c8"
+    },
+    {
+      "observation_id": "f00021-o025",
+      "group_id": "bk-092",
+      "frame_id": "f00021",
+      "timestamp_s": 4.2,
+      "bbox_xyxy": [
+        406,
+        778,
+        476,
+        1077
+      ],
+      "crop_path": "crops_labeling/f00021-o025.png",
+      "stratum": "t0r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00022-o004",
+          "frame_id": "f00022",
+          "bbox_xyxy": [
+            404,
+            833,
+            473,
+            1080
+          ]
+        }
+      ],
+      "index": 76,
+      "crop_sha256": "61e57f4f0307f1b8d6f819a70b8f9f97c84f50e4b9a69b2bc73f25bc2aed1a89"
+    },
+    {
+      "observation_id": "f00021-o029",
+      "group_id": "bk-066",
+      "frame_id": "f00021",
+      "timestamp_s": 4.2,
+      "bbox_xyxy": [
+        1176,
+        190,
+        1192,
+        511
+      ],
+      "crop_path": "crops_labeling/f00021-o029.png",
+      "stratum": "t0r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00020-o027",
+          "frame_id": "f00020",
+          "bbox_xyxy": [
+            1186,
+            127,
+            1202,
+            464
+          ]
+        },
+        {
+          "observation_id": "f00022-o033",
+          "frame_id": "f00022",
+          "bbox_xyxy": [
+            1173,
+            259,
+            1184,
+            542
+          ]
+        }
+      ],
+      "index": 77,
+      "crop_sha256": "ee2c2801d63b3554c62d2c7d86da52cd29279c10a955e57abb20a80de33323fc"
+    },
+    {
+      "observation_id": "f00121-o002",
+      "group_id": "bk-279",
+      "frame_id": "f00121",
+      "timestamp_s": 24.232,
+      "bbox_xyxy": [
+        745,
+        548,
+        817,
+        898
+      ],
+      "crop_path": "crops/c1260e32ac40333d9971.png",
+      "stratum": "t2r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00119-o004",
+          "frame_id": "f00119",
+          "bbox_xyxy": [
+            770,
+            475,
+            840,
+            819
+          ]
+        },
+        {
+          "observation_id": "f00122-o009",
+          "frame_id": "f00122",
+          "bbox_xyxy": [
+            754,
+            638,
+            828,
+            963
+          ]
+        }
+      ],
+      "index": 78,
+      "crop_sha256": "de3d0cf1084bc9698fc699810f3d6ba59fa28ef04364da43ca0e2d0ef084adde"
+    },
+    {
+      "observation_id": "f00220-o003",
+      "group_id": "bk-550",
+      "frame_id": "f00220",
+      "timestamp_s": 44.03,
+      "bbox_xyxy": [
+        799,
+        410,
+        899,
+        766
+      ],
+      "crop_path": "crops/d6b0323ca856ee1b72dd.png",
+      "stratum": "t3r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00218-o006",
+          "frame_id": "f00218",
+          "bbox_xyxy": [
+            827,
+            411,
+            926,
+            744
+          ]
+        },
+        {
+          "observation_id": "f00216-o009",
+          "frame_id": "f00216",
+          "bbox_xyxy": [
+            774,
+            351,
+            863,
+            676
+          ]
+        }
+      ],
+      "index": 79,
+      "crop_sha256": "bf9d773e28343f9cf82b96092f5f2b5a82e80bac7d24ebab50e41db578799bb5"
+    },
+    {
+      "observation_id": "f00254-o015",
+      "group_id": "bk-606",
+      "frame_id": "f00254",
+      "timestamp_s": 50.83,
+      "bbox_xyxy": [
+        1292,
+        0,
+        1413,
+        366
+      ],
+      "crop_path": "crops_labeling/f00254-o015.png",
+      "stratum": "t4r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00253-o010",
+          "frame_id": "f00253",
+          "bbox_xyxy": [
+            1370,
+            0,
+            1493,
+            374
+          ]
+        }
+      ],
+      "index": 80,
+      "crop_sha256": "9573e911a80e39f1ea0d2024db493e5849a289252f74f44b4608409896796f71"
+    },
+    {
+      "observation_id": "f00267-o010",
+      "group_id": "bk-629",
+      "frame_id": "f00267",
+      "timestamp_s": 53.43,
+      "bbox_xyxy": [
+        378,
+        222,
+        437,
+        826
+      ],
+      "crop_path": "crops/30c6cab2b19e8f21fc07.png",
+      "stratum": "t4r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00266-o011",
+          "frame_id": "f00266",
+          "bbox_xyxy": [
+            393,
+            172,
+            458,
+            796
+          ]
+        }
+      ],
+      "index": 81,
+      "crop_sha256": "f0f108306ae2ae3e4c3083b85912990bfdf8d94468d73a7165ac4f4e864fae24"
+    },
+    {
+      "observation_id": "f00293-o003",
+      "group_id": "bk-659",
+      "frame_id": "f00293",
+      "timestamp_s": 58.63,
+      "bbox_xyxy": [
+        662,
+        299,
+        751,
+        836
+      ],
+      "crop_path": "crops/8f3c43c792d467a0f808.png",
+      "stratum": "t5r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00289-o005",
+          "frame_id": "f00289",
+          "bbox_xyxy": [
+            809,
+            142,
+            928,
+            630
+          ]
+        },
+        {
+          "observation_id": "f00291-o001",
+          "frame_id": "f00291",
+          "bbox_xyxy": [
+            710,
+            236,
+            803,
+            769
+          ]
+        }
+      ],
+      "index": 82,
+      "crop_sha256": "c3b76acc26327702eafc2bb410c30bc6074e43c7a3f248906c108ec1b69c2c6d"
+    },
+    {
+      "observation_id": "f00058-o004",
+      "group_id": "bk-164",
+      "frame_id": "f00058",
+      "timestamp_s": 11.6,
+      "bbox_xyxy": [
+        918,
+        175,
+        999,
+        510
+      ],
+      "crop_path": "crops/a24d4b8a6427fae30f0b.png",
+      "stratum": "t0r0",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00056-o005",
+          "frame_id": "f00056",
+          "bbox_xyxy": [
+            900,
+            170,
+            981,
+            505
+          ]
+        },
+        {
+          "observation_id": "f00060-o006",
+          "frame_id": "f00060",
+          "bbox_xyxy": [
+            947,
+            10,
+            1039,
+            344
+          ]
+        }
+      ],
+      "index": 83,
+      "crop_sha256": "bb6fac71eca78b93480dfea8c96d6d7c6b5b5d655bc9647eeaf94a2314f454ca"
+    },
+    {
+      "observation_id": "f00313-o008",
+      "group_id": "bk-699",
+      "frame_id": "f00313",
+      "timestamp_s": 62.63,
+      "bbox_xyxy": [
+        1628,
+        797,
+        1718,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00313-o008.png",
+      "stratum": "t5r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 84,
+      "crop_sha256": "63d0556d2b7203b2d26baf03b09cda2a0ec892859a30c1ef62a8db2cf9fb74a4"
+    },
+    {
+      "observation_id": "f00103-o010",
+      "group_id": "bk-263",
+      "frame_id": "f00103",
+      "timestamp_s": 20.632,
+      "bbox_xyxy": [
+        67,
+        0,
+        264,
+        309
+      ],
+      "crop_path": "crops_labeling/f00103-o010.png",
+      "stratum": "t1r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00104-o010",
+          "frame_id": "f00104",
+          "bbox_xyxy": [
+            0,
+            0,
+            194,
+            335
+          ]
+        },
+        {
+          "observation_id": "f00102-o013",
+          "frame_id": "f00102",
+          "bbox_xyxy": [
+            156,
+            0,
+            336,
+            270
+          ]
+        }
+      ],
+      "index": 85,
+      "crop_sha256": "c92a5b1ab45957d4b11728e0b617ca013fa48ca1dedb7c666a6b714c09293ee0"
+    },
+    {
+      "observation_id": "f00047-o032",
+      "group_id": "bk-149",
+      "frame_id": "f00047",
+      "timestamp_s": 9.4,
+      "bbox_xyxy": [
+        487,
+        570,
+        512,
+        1032
+      ],
+      "crop_path": "crops_labeling/f00047-o032.png",
+      "stratum": "t0r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 86,
+      "crop_sha256": "058e071772e7cf7167ee4a4ef8d398a9cd19262d1c5065c48c5c016d16ebe8c3"
+    },
+    {
+      "observation_id": "f00209-o003",
+      "group_id": "bk-463",
+      "frame_id": "f00209",
+      "timestamp_s": 41.83,
+      "bbox_xyxy": [
+        492,
+        286,
+        595,
+        685
+      ],
+      "crop_path": "crops/727306ba6ed722bb6ec3.png",
+      "stratum": "t3r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [],
+      "index": 87,
+      "crop_sha256": "06a2b202e843d658d2e06ced4a3f2028c158258a19c4813e6957dd3450d35f2e"
+    },
+    {
+      "observation_id": "f00171-o007",
+      "group_id": "bk-386",
+      "frame_id": "f00171",
+      "timestamp_s": 34.232,
+      "bbox_xyxy": [
+        57,
+        5,
+        119,
+        316
+      ],
+      "crop_path": "crops_labeling/f00171-o007.png",
+      "stratum": "t2r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 88,
+      "crop_sha256": "6948fa6315ac76ef6f31d1faf73cc6b2cc595622e5ff362bc7541bce8c9ce377"
+    },
+    {
+      "observation_id": "f00309-o001",
+      "group_id": "bk-675",
+      "frame_id": "f00309",
+      "timestamp_s": 61.83,
+      "bbox_xyxy": [
+        602,
+        661,
+        677,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00309-o001.png",
+      "stratum": "t5r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 89,
+      "crop_sha256": "1e642a9fed6ab6d505ac9e73bac07d989ea47f1607f773311eae5483d3cd6555"
+    },
+    {
+      "observation_id": "f00127-o012",
+      "group_id": "bk-301",
+      "frame_id": "f00127",
+      "timestamp_s": 25.432,
+      "bbox_xyxy": [
+        1789,
+        460,
+        1845,
+        657
+      ],
+      "crop_path": "crops_labeling/f00127-o012.png",
+      "stratum": "t2r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00147-o016",
+          "frame_id": "f00147",
+          "bbox_xyxy": [
+            631,
+            614,
+            674,
+            884
+          ]
+        },
+        {
+          "observation_id": "f00151-o015",
+          "frame_id": "f00151",
+          "bbox_xyxy": [
+            794,
+            288,
+            841,
+            543
+          ]
+        }
+      ],
+      "index": 90,
+      "crop_sha256": "66b618546ba24d0b8100f577f07958f4bc03eb61a01073540631c4d938ecaad6"
+    },
+    {
+      "observation_id": "f00073-o023",
+      "group_id": "bk-195",
+      "frame_id": "f00073",
+      "timestamp_s": 14.632,
+      "bbox_xyxy": [
+        1537,
+        243,
+        1681,
+        699
+      ],
+      "crop_path": "crops/1dc78a671206a4047dd1.png",
+      "stratum": "t1r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00072-o020",
+          "frame_id": "f00072",
+          "bbox_xyxy": [
+            1539,
+            293,
+            1691,
+            747
+          ]
+        },
+        {
+          "observation_id": "f00068-o025",
+          "frame_id": "f00068",
+          "bbox_xyxy": [
+            1486,
+            480,
+            1656,
+            918
+          ]
+        }
+      ],
+      "index": 91,
+      "crop_sha256": "8689678b5f66c5c0d0bb3eaaf85b9a7a92c54c9363cb64b8d713bacce0fc2bf3"
+    },
+    {
+      "observation_id": "f00207-o019",
+      "group_id": "bk-458",
+      "frame_id": "f00207",
+      "timestamp_s": 41.43,
+      "bbox_xyxy": [
+        1001,
+        800,
+        1141,
+        1080
+      ],
+      "crop_path": "crops_labeling/f00207-o019.png",
+      "stratum": "t3r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 92,
+      "crop_sha256": "80d0e10b7fa9cc7a23dbafa32dc14985b76c71cd9f9b10ce6100bb2f20d1f701"
+    },
+    {
+      "observation_id": "f00050-o017",
+      "group_id": "bk-150",
+      "frame_id": "f00050",
+      "timestamp_s": 10.0,
+      "bbox_xyxy": [
+        1651,
+        677,
+        1679,
+        982
+      ],
+      "crop_path": "crops/864a2a1e4f467e3d0061.png",
+      "stratum": "t0r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00049-o021",
+          "frame_id": "f00049",
+          "bbox_xyxy": [
+            1631,
+            676,
+            1659,
+            973
+          ]
+        },
+        {
+          "observation_id": "f00047-o034",
+          "frame_id": "f00047",
+          "bbox_xyxy": [
+            1642,
+            680,
+            1675,
+            975
+          ]
+        }
+      ],
+      "index": 93,
+      "crop_sha256": "5c55aa754397ff92eafdc8f5349297eb02ad1d5a53b5e968589aa5dd9e4433e3"
+    },
+    {
+      "observation_id": "f00104-o001",
+      "group_id": "bk-253",
+      "frame_id": "f00104",
+      "timestamp_s": 20.832,
+      "bbox_xyxy": [
+        1086,
+        0,
+        1241,
+        373
+      ],
+      "crop_path": "crops_labeling/f00104-o001.png",
+      "stratum": "t1r0",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00103-o004",
+          "frame_id": "f00103",
+          "bbox_xyxy": [
+            1130,
+            0,
+            1272,
+            329
+          ]
+        },
+        {
+          "observation_id": "f00102-o003",
+          "frame_id": "f00102",
+          "bbox_xyxy": [
+            1155,
+            0,
+            1283,
+            277
+          ]
+        }
+      ],
+      "index": 94,
+      "crop_sha256": "293c8bcdce90e96f49854902050ee44a57fa7f1097c1f9afa6999aed5fb6fd6d"
+    },
+    {
+      "observation_id": "f00193-o008",
+      "group_id": "bk-411",
+      "frame_id": "f00193",
+      "timestamp_s": 38.632,
+      "bbox_xyxy": [
+        1677,
+        302,
+        1749,
+        751
+      ],
+      "crop_path": "crops_labeling/f00193-o008.png",
+      "stratum": "t3r1",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [
+        {
+          "observation_id": "f00192-o008",
+          "frame_id": "f00192",
+          "bbox_xyxy": [
+            1695,
+            323,
+            1762,
+            774
+          ]
+        },
+        {
+          "observation_id": "f00194-o007",
+          "frame_id": "f00194",
+          "bbox_xyxy": [
+            1647,
+            327,
+            1710,
+            769
+          ]
+        }
+      ],
+      "index": 95,
+      "crop_sha256": "680e163835be17c10a93857d48b7ebdf2f3504e47f48cb7b9e6d73cba5f29021"
+    },
+    {
+      "observation_id": "f00050-o020",
+      "group_id": "bk-075",
+      "frame_id": "f00050",
+      "timestamp_s": 10.0,
+      "bbox_xyxy": [
+        188,
+        755,
+        213,
+        1041
+      ],
+      "crop_path": "crops/2fa615da6c9d1c9d9d8b.png",
+      "stratum": "t0r2",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00021-o020",
+          "frame_id": "f00021",
+          "bbox_xyxy": [
+            1109,
+            203,
+            1131,
+            501
+          ]
+        },
+        {
+          "observation_id": "f00020-o012",
+          "frame_id": "f00020",
+          "bbox_xyxy": [
+            1116,
+            159,
+            1137,
+            447
+          ]
+        }
+      ],
+      "index": 96,
+      "crop_sha256": "b02beb470766579fd2d2244ea0d2f9115abdd17a287370734c98ed7e09da528f"
+    },
+    {
+      "observation_id": "f00329-o010",
+      "group_id": "bk-739",
+      "frame_id": "f00329",
+      "timestamp_s": 65.83,
+      "bbox_xyxy": [
+        873,
+        238,
+        1085,
+        922
+      ],
+      "crop_path": "crops/6acf6289ef398d059116.png",
+      "stratum": "t5r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00328-o008",
+          "frame_id": "f00328",
+          "bbox_xyxy": [
+            999,
+            294,
+            1220,
+            967
+          ]
+        },
+        {
+          "observation_id": "f00327-o008",
+          "frame_id": "f00327",
+          "bbox_xyxy": [
+            963,
+            362,
+            1176,
+            1029
+          ]
+        }
+      ],
+      "index": 97,
+      "crop_sha256": "62229a1ffeecb98282222d5b29c35565e4f40f4f7abf9a5617ab2d73bc6d3bb5"
+    },
+    {
+      "observation_id": "f00077-o032",
+      "group_id": "bk-223",
+      "frame_id": "f00077",
+      "timestamp_s": 15.432,
+      "bbox_xyxy": [
+        412,
+        670,
+        508,
+        1024
+      ],
+      "crop_path": "crops_labeling/f00077-o032.png",
+      "stratum": "t1r2",
+      "crop_source": "label_extract_native_bbox",
+      "other_sightings": [],
+      "index": 98,
+      "crop_sha256": "51c80ce8e4a7d3268cf9c09dcb9aebf69f49cbd8ab68d56a6a47a6d7266ed66a"
+    },
+    {
+      "observation_id": "f00008-o015",
+      "group_id": "bk-036",
+      "frame_id": "f00008",
+      "timestamp_s": 1.6,
+      "bbox_xyxy": [
+        1583,
+        398,
+        1639,
+        868
+      ],
+      "crop_path": "crops/ad67a2c04393531d473c.png",
+      "stratum": "t0r1",
+      "crop_source": "reader_crop",
+      "other_sightings": [
+        {
+          "observation_id": "f00010-o020",
+          "frame_id": "f00010",
+          "bbox_xyxy": [
+            1563,
+            492,
+            1611,
+            941
+          ]
+        }
+      ],
+      "index": 99,
+      "crop_sha256": "1ad217f9690256a8e44f4b5dca877b4b5fe4ac8050ac5bfe8fc137afaacdf499"
+    }
+  ],
+  "labels": {},
+  "ops": []
+}
