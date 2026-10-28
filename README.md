@@ -82,6 +82,5 @@ node tests/client-regressions-pairs.cjs
   ECB euro reference rates for currency conversion.
 - Geometry: OpenCV (tracking, registration, panorama), pycolmap / COLMAP (3D map), three.js (3D view).
 - App: FastAPI, Uvicorn, openpyxl (results workbook).
-- AI coding assistants used to build this project: Claude Code (Anthropic) and Codex (OpenAI).
 
 The `third_party/insurance_claim_live_agent_team/` directory is the reference app this project started from, kept with its licence.
