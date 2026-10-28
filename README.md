@@ -7,7 +7,7 @@ catalogues, prices the physical editions with cited sources, builds a 2D panoram
 geometry supports. The result is `claim_packet.json` plus an HTML/PDF report. Anything the evidence does not support stays explicitly
 unknown, unpriced or "needs review"; it is never filled in.
 
-![Phone during a sweep](docs/ui/phone_sweep_recording.png)
+![2D panorama of a shelf sweep with the detected non-book items outlined](docs/ui/shelf_panorama.jpg)
 
 ## Quick start
 
